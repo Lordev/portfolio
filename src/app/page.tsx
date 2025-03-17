@@ -1,5 +1,20 @@
 import Nav from "@/components/Nav";
 import Image from "next/image";
+import Heading from "@/components/Heading";
+import Chip from "@/components/Chip";
+
+const aboutChips : string[] = [
+  "Design",
+  "Develop",
+  "Wireframing",
+  "UX",
+  "Responsiveness",
+  "Prototyping",
+  "Testing",
+  "Deployment",
+];
+
+
 
 export default function Home() {
   return (
@@ -35,6 +50,59 @@ export default function Home() {
             height={900}
             className="absolute -bottom-12 right-[13vw] w-[52vw] h-[52vw] aspect-square -z-10"
           />
+        </div>
+      </div>
+      <div className="relative">
+        <div className="absolute -left-3/5 h-4/5 w-full top-1/2 transform -translate-y-1/2">
+          <Image
+            className=" "
+            src="/about/pc-background.png"
+            alt=""
+            layout="fill"
+          />
+        </div>
+        <div className="grid grid-cols-6 gap-6 px-30 py-60">
+          <div className="col-span-2">
+            <Heading title="About" />
+          </div>
+          <div className="col-span-4">
+            <p className="text-5xl col-span-2 text-gray-400">
+              “I{"'"}m a web enthusiast who loves turning ideas into interactive
+              experiences. When I{"'"}m not, I{"'"}m probably exploring new tech
+              trends or brewing the perfect of coffee.”
+            </p>
+          </div>
+          <div className="col-start-3 col-span-2 flex flex-col justify-center gap-12">
+            <div className="grid-cols-2 grid col-span-2">
+              <p className="text-gray-400">
+                {" "}
+                “I{"'"}m a web enthusiast who loves turning ideas into
+                interactive experiences. When I{"'"}m not, I{"'"}m probably
+                exploring new tech trends or brewing the perfect of coffee.” “I
+                {"'"}m a web enthusiast who loves turning ideas into
+                interactive.
+              </p>
+              <p className="text-gray-400">
+                {" "}
+                “I{"'"}m a web enthusiast who loves turning ideas into
+                interactive experiences. When I{"'"}m not, I{"'"}m probably
+                exploring new tech trends or brewing the perfect of coffee.””
+              </p>
+            </div>
+            <div className="col-span-2 self-start flex flex-wrap gap-4">
+              {aboutChips.map((chip) => (
+                <Chip label={chip} key={chip}/>
+              ))}
+            </div>
+          </div>
+          <div className="col-start-5 col-span-2 border-8 border-orange-900">
+            <Image
+              src="/about/img-headshot.png"
+              width={900}
+              height={900}
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
