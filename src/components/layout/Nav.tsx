@@ -1,12 +1,12 @@
 export default function Nav() {
   return (
     <nav>
-      <div className="flex gap-3 py-4 border-white border-b px-12 justify-between items-center">
-        <span className="uppercase font-semibold font-(family-name:--font-commissioner)">
+      <div className="flex gap-3 py-16 border-white border-b px-12 justify-between items-center">
+        <span className="uppercase font-semibold">
           I design stuff
         </span>
         <svg
-          className="h-8 w-8"
+          className="h-32 w-32"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 28 28"
         >

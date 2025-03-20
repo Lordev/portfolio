@@ -3,14 +3,72 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-commissioner: var(--font-commissioner);
+  --primary-50: #fff8f6;
+  --primary-100: #ffdbce;
+  --primary-200: #ffb599;
+  --primary-300: #ff8c5d;
+  --primary-400: #f66018;
+  --primary-500: #ea580c;
+  --primary-600: #a73a00;
+  --primary-700: #933200;
+  --primary-800: #7f2b00;
+  --primary-900: #5a1c00;
+
+  --vw: 1vw;
+
+  
+  --marpadTiny: calc(0,2083 * var(--vw) * var(--marpadMultiplier));
+  --marpadSmaller: calc(0.5 * var(--vw) * var(--marpadMultiplier));
+  --marpadSmall: calc(1.3 * var(--vw) * var(--marpadMultiplier));
+  --marpadNormal: calc(2 * var(--vw) * var(--marpadMultiplier));
+  --marpadBig: calc(3.5 * var(--vw) * var(--marpadMultiplier));
+  --marpadBigger: calc(6.25 * var(--vw) * var(--marpadMultiplier));
+
+  /* sizes based on 1920w */
+  /* 16px  */
+  --bodyFontSize: calc(0.8333 * var(--vw) * var(--fontSizeMultiplier)); 
+
+  /* 28px */
+  --labelFontSize1: calc(1.4583 * var(--vw) * var(--fontSizeMultiplier));
+  /* 16px */
+  --labelFontSize2: calc(0.8333 * var(--vw) * var(--fontSizeMultiplier));
+  /* 11px */
+  --labelFontSize3: calc(0.5729 * var(--vw) * var(--fontSizeMultiplier));
+
+
+  /* 80px */
+  --h1FontSize: calc(4,1667 * var(--vw) * var(--fontSizeMultiplier)); 
+  /* 64px */
+  --h2FontSize: calc(3.3333 * var(--vw) * var(--fontSizeMultiplier));
+  /* 48px */
+  --h3FontSize: calc(2.5 * var(--vw) * var(--fontSizeMultiplier));
+  /* 32px */
+  --h4FontSize: calc(1.6667 * var(--vw) * var(--fontSizeMultiplier));
+  /* 24px */
+  --h5FontSize: calc(1.25 * var(--vw) * var(--fontSizeMultiplier));
+  /* 20px */
+  --h6FontSize: calc(1.0417 * var(--vw) * var(--fontSizeMultiplier));
+
+  /* 160px */
+  --display1FontSize: calc(8.3333 * var(--vw) * var(--fontSizeMultiplier));
+  /* 140px */
+  --display2FontSize: calc(7.2917 * var(--vw) * var(--fontSizeMultiplier));
+  /* 120px */
+  --display3FontSize: calc(6.25 * var(--vw) * var(--fontSizeMultiplier));
+  /* 100px */
+  --display4FontSize: calc(5.2083 * var(--vw) * var(--fontSizeMultiplier));
+  /* 92px */
+  --display5FontSize: calc(4.7917 * var(--vw) * var(--fontSizeMultiplier));
+
+  --defaultFlexDirection: row;
+  --defaultFlexDirectionVertical: column;
+  --defaultFlexDirectionReverse: row-reverse;
+  --defaultFlexDirectionVerticalReverse: column-reverse;
+
+  --containerWidth: calc(87.5 * var(--vw));
+  
+  --p-fluid-md: calc((100% - var(--containerWidth)) / 2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,8 +78,525 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Mobile */
+@media (max-width: 575.98px) {
+  :root {
+    --fontSizeMultiplier: 2;
+    --marpadMultiplier: 2;
+  }
+}
+
+/* Mobile (Landscape) & Tablet */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  :root {
+    --fontSizeMultiplier: 1.2;
+    --marpadMultiplier: 1.2;
+  }
+}
+
+/* Laptop & Desktop */
+@media (min-width: 1200px) {
+  :root {
+    --fontSizeMultiplier: 1;
+    --marpadMultiplier: 1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  :root {
+    --containerWidth: calc(100 * var(--vw));
+  }
+}
+
+@theme inline {
+  /* colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
+  /* font-family */
+  --font-commissioner: var(--font-commissioner);
+
+  /* 1px on 1920px */
+  --spacing: 0.0521vw;
+
+  --text-body: var(--bodyFontSize);
+
+  --text-label-sm: var(--labelFontSize3);
+  --text-label-sm--line-height: 1.5em;
+  --text-label-md: var(--labelFontSize2);
+  --text-label-lg: var(--labelFontSize1);
+
+  --text-fluid-h1: var(--h1FontSize);
+  --text-fluid-h2: var(--h2FontSize);
+  --text-fluid-h3: var(--h3FontSize);
+  --text-fluid-h3--line-height: 1.1em;
+  --text-fluid-h4: var(--h4FontSize);
+  --text-fluid-h5: var(--h5FontSize);
+  --text-fluid-h6: var(--h6FontSize);
+
+  --text-fluid-display1: var(--display1FontSize);
+  --text-fluid-display1--line-height: 0.8em;
+  --text-fluid-display2: var(--display2FontSize);
+  --text-fluid-display2--line-height: 0.8em;
+  --text-fluid-display3: var(--display3FontSize);
+  --text-fluid-display3--line-height: 1em;
+  --text-fluid-display4: var(--display4FontSize);
+  --text-fluid-display4--line-height: 1em;
+  --text-fluid-display5: var(--display5FontSize);
+  --text-fluid-display5--line-height: 1em;
+  --text-fluid-display6: var(--display6FontSize);
+  --text-fluid-display6--line-height: 1.2em;
+
+
+  /* gap */
+  --gap-4: max(0.25rem, calc(0.2rem + 0.05vw));
+  --gap-8: max(0.5rem, calc(0.4rem + 0.1vw));
+  --gap-12: max(0.75rem, calc(0.65rem + 0.1vw));
+  --gap-16: max(1rem, calc(1vw));
+  --gap-24: max(1.5rem, calc(1.3rem + 0.2vw));
+  --gap-32: max(2rem, calc(1.75rem + 0.25vw));
+  --gap-48: max(3rem, calc(2.6rem + 0.4vw));
+  --gap-64: max(4rem, calc(3.75rem + 0.5vw));
+  --gap-96: max(6rem, calc(5.2rem + 0.8vw));
+  --gap-160: max(10rem, calc(8.5rem + 1.5vw));
+
+}
+
+@layer utilities {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-commissioner);
+    line-height: 1;
+  }
+
+  p {
+    font-size: max(12px, var(--bodyFontSize));
+    line-height: 1.75em;
+  }
+
+  button {
+    outline: 0;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  q {
+    display: inline;
+    font-style: italic;
+  }
+  q:before {
+    content: '"';
+    font-style: normal;
+  }
+  q:after {
+    content: '"';
+    font-style: normal;
+  }
+  textarea,
+  input[type="text"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="search"],
+  input[type="password"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  th,
+  td {
+    padding: var(--marpadSmallV) var(--marpadSmall);
+  }
+  big {
+    font-size: 120%;
+  }
+  small,
+  sup,
+  sub {
+    font-size: 80%;
+  }
+  sup {
+    vertical-align: super;
+  }
+  sub {
+    vertical-align: sub;
+  }
+  dd {
+    margin-left: var(--marpadSmaller);
+  }
+  ins {
+    text-decoration: underline;
+  }
+  del,
+  strike,
+  s {
+    text-decoration: line-through;
+  }
+  dt {
+    font-weight: bold;
+  }
+  address,
+  cite,
+  var {
+    font-style: italic;
+  }
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: var(--marpadSmall);
+  }
+
+  .col {
+    padding: var(--marpadNormal);
+    flex-grow: 1;
+    flex-basis: 0px;
+  }
+  .col .col {
+    padding: 0px;
+  }
+
+  .row {
+    width: 100%;
+    --flexDirection: var(--defaultFlexDirection);
+    --flexDirectionVertical: var(--defaultFlexDirectionVertical);
+
+    flex-direction: var(--flexDirection);
+  }
+
+
+  .row.in-container {
+    margin-top: var(--marpadBigger);
+    width: 100%;
+    padding-left: calc((100% - var(--containerWidth)) / 2);
+    padding-right: calc((100% - var(--containerWidth)) / 2);
+  }
+
+  .row.reverse-order {
+    --flexDirection: var(--defaultFlexDirectionReverse);
+    --flexDirectionVertical: var(--defaultFlexDirectionVerticalReverse);
+  }
+  .row.vertical {
+    flex-direction: var(--flexDirectionVertical);
+  }
+
+  @media (max-width: 575.98px) {
+    .row.in-container_mobile {
+      width: 100%;
+      padding-left: calc((100% - var(--containerWidth)) / 2);
+      padding-right: calc((100% - var(--containerWidth)) / 2);
+
+      margin-top: var(--marpadBig);
+    }
+    .row.reverse-order_mobile {
+      --flexDirection: var(--defaultFlexDirectionReverse);
+      --flexDirectionVertical: var(--defaultFlexDirectionVerticalReverse);
+    }
+    .row.vertical_mobile {
+      flex-direction: var(--flexDirectionVertical);
+    }
+    .row:not(.vertical):not(.vertical_mobile) {
+      align-items: flex-start;
+    }
+
+    .row.gap:not(.vertical):not(.vertical_mobile):not(.reverse-order):not(
+        .reverse-order_mobile
+      )
+      > .col:not(:last-child),
+    .row.gap_mobile:not(.vertical):not(.vertical_mobile):not(
+        .reverse-order
+      ):not(.reverse-order_mobile)
+      > .col:not(:last-child) {
+      margin-right: var(--marpadNormal);
+    }
+    .row.gap.vertical:not(.reverse-order):not(.reverse-order_mobile)
+      > .col:not(:last-child),
+    .row.gap.vertical_mobile:not(.reverse-order):not(.reverse-order_mobile)
+      > .col:not(:last-child),
+    .row.gap_mobile.vertical:not(.reverse-order):not(.reverse-order_mobile)
+      > .col:not(:last-child),
+    .row.gap_mobile.vertical_mobile:not(.reverse-order):not(
+        .reverse-order_mobile
+      )
+      > .col:not(:last-child) {
+      margin-bottom: var(--marpadNormal);
+    }
+
+    .row.gap:not(.vertical):not(.vertical_mobile).reverse-order
+      > .col:not(:first-child),
+    .row.gap:not(.vertical):not(.vertical_mobile).reverse-order_mobile
+      > .col:not(:first-child),
+    .row.gap_mobile:not(.vertical):not(.vertical_mobile).reverse-order
+      > .col:not(:first-child),
+    .row.gap_mobile:not(.vertical):not(.vertical_mobile).reverse-order_mobile
+      > .col:not(:first-child) {
+      margin-right: var(--marpadNormal);
+    }
+    .row.gap.vertical.reverse-order > .col:not(:first-child),
+    .row.gap.vertical.reverse-order_mobile > .col:not(:first-child),
+    .row.gap.vertical_mobile.reverse-order > .col:not(:first-child),
+    .row.gap.vertical_mobile.reverse-order_mobile > .col:not(:first-child),
+    .row.gap_mobile.vertical.reverse-order > .col:not(:first-child),
+    .row.gap_mobile.vertical.reverse-order_mobile > .col:not(:first-child),
+    .row.gap_mobile.vertical_mobile.reverse-order > .col:not(:first-child),
+    .row.gap_mobile.vertical_mobile.reverse-order_mobile
+      > .col:not(:first-child) {
+      margin-bottom: var(--marpadNormal);
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 1199.98px) {
+    .row.in-container_tablet {
+      width: 100%;
+      padding-left: calc((100% - var(--containerWidth)) / 2);
+      padding-right: calc((100% - var(--containerWidth)) / 2);
+
+      margin-top: var(--marpadBig);
+    }
+    .row.reverse-order_tablet {
+      --flexDirection: var(--defaultFlexDirectionReverse);
+      --flexDirectionVertical: var(--defaultFlexDirectionVerticalReverse);
+    }
+    .row.vertical_tablet {
+      flex-direction: var(--flexDirectionVertical);
+    }
+    .row:not(.vertical):not(.vertical_tablet) {
+      align-items: flex-start;
+    }
+
+    .row.gap:not(.vertical):not(.vertical_tablet):not(.reverse-order):not(
+        .reverse-order_tablet
+      )
+      > .col:not(:last-child),
+    .row.gap_tablet:not(.vertical):not(.vertical_tablet):not(
+        .reverse-order
+      ):not(.reverse-order_tablet)
+      > .col:not(:last-child) {
+      margin-right: var(--marpadNormal);
+    }
+    .row.gap.vertical:not(.reverse-order):not(.reverse-order_tablet)
+      > .col:not(:last-child),
+    .row.gap.vertical_tablet:not(.reverse-order):not(.reverse-order_tablet)
+      > .col:not(:last-child),
+    .row.gap_tablet.vertical:not(.reverse-order):not(.reverse-order_tablet)
+      > .col:not(:last-child),
+    .row.gap_tablet.vertical_tablet:not(.reverse-order):not(
+        .reverse-order_tablet
+      )
+      > .col:not(:last-child) {
+      margin-bottom: var(--marpadNormal);
+    }
+
+    .row.gap:not(.vertical):not(.vertical_tablet).reverse-order
+      > .col:not(:first-child),
+    .row.gap:not(.vertical):not(.vertical_tablet).reverse-order_tablet
+      > .col:not(:first-child),
+    .row.gap_tablet:not(.vertical):not(.vertical_tablet).reverse-order
+      > .col:not(:first-child),
+    .row.gap_tablet:not(.vertical):not(.vertical_tablet).reverse-order_tablet
+      > .col:not(:first-child) {
+      margin-right: var(--marpadNormal);
+    }
+    .row.gap.vertical.reverse-order > .col:not(:first-child),
+    .row.gap.vertical.reverse-order_tablet > .col:not(:first-child),
+    .row.gap.vertical_tablet.reverse-order > .col:not(:first-child),
+    .row.gap.vertical_tablet.reverse-order_tablet > .col:not(:first-child),
+    .row.gap_tablet.vertical.reverse-order > .col:not(:first-child),
+    .row.gap_tablet.vertical.reverse-order_tablet > .col:not(:first-child),
+    .row.gap_tablet.vertical_tablet.reverse-order > .col:not(:first-child),
+    .row.gap_tablet.vertical_tablet.reverse-order_tablet
+      > .col:not(:first-child) {
+      margin-bottom: var(--marpadNormal);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .row.in-container_mobile {
+      width: 100%;
+      padding-left: calc((100% - var(--containerWidth)) / 2);
+      padding-right: calc((100% - var(--containerWidth)) / 2);
+
+      margin-top: var(--marpadBig);
+    }
+    .row.reverse-order_desktop {
+      --flexDirection: var(--defaultFlexDirectionReverse);
+      --flexDirectionVertical: var(--defaultFlexDirectionVerticalReverse);
+    }
+    .row.vertical_desktop {
+      flex-direction: var(--flexDirectionVertical);
+    }
+    .row:not(.vertical):not(.vertical_desktop) {
+      align-items: flex-start;
+    }
+
+    .row.gap:not(.vertical):not(.vertical_desktop):not(.reverse-order):not(
+        .reverse-order_desktop
+      )
+      > .col:not(:last-child),
+    .row.gap_desktop:not(.vertical):not(.vertical_desktop):not(
+        .reverse-order
+      ):not(.reverse-order_desktop)
+      > .col:not(:last-child) {
+      margin-right: var(--marpadNormal);
+    }
+    .row.gap.vertical:not(.reverse-order):not(.reverse-order_desktop)
+      > .col:not(:last-child),
+    .row.gap.vertical_desktop:not(.reverse-order):not(.reverse-order_desktop)
+      > .col:not(:last-child),
+    .row.gap_desktop.vertical:not(.reverse-order):not(.reverse-order_desktop)
+      > .col:not(:last-child),
+    .row.gap_desktop.vertical_desktop:not(.reverse-order):not(
+        .reverse-order_desktop
+      )
+      > .col:not(:last-child) {
+      margin-bottom: var(--marpadNormal);
+    }
+
+    .row.gap:not(.vertical):not(.vertical_desktop).reverse-order
+      > .col:not(:first-child),
+    .row.gap:not(.vertical):not(.vertical_desktop).reverse-order_desktop
+      > .col:not(:first-child),
+    .row.gap_desktop:not(.vertical):not(.vertical_desktop).reverse-order
+      > .col:not(:first-child),
+    .row.gap_desktop:not(.vertical):not(.vertical_desktop).reverse-order_desktop
+      > .col:not(:first-child) {
+      margin-right: var(--marpadNormal);
+    }
+    .row.gap.vertical.reverse-order > .col:not(:first-child),
+    .row.gap.vertical.reverse-order_desktop > .col:not(:first-child),
+    .row.gap.vertical_desktop.reverse-order > .col:not(:first-child),
+    .row.gap.vertical_desktop.reverse-order_desktop > .col:not(:first-child),
+    .row.gap_desktop.vertical.reverse-order > .col:not(:first-child),
+    .row.gap_desktop.vertical.reverse-order_desktop > .col:not(:first-child),
+    .row.gap_desktop.vertical_desktop.reverse-order > .col:not(:first-child),
+    .row.gap_desktop.vertical_desktop.reverse-order_desktop
+      > .col:not(:first-child) {
+      margin-bottom: var(--marpadNormal);
+    }
+  }
 }
