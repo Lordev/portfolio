@@ -1,10 +1,10 @@
-export default function Heading({ title }) {
+export default function SectionHeading({ title }) {
   return (
     <div className="relative">
       <svg
-        className="absolute -top-5 transform left-0 -z-10"
+        className="absolute left-0 transform -z-10 h-189 w-180 -top-1/2"
         width="189"
-        height="153"
+        height="180"
         viewBox="0 0 189 153"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -15,10 +15,10 @@ export default function Heading({ title }) {
         />
       </svg>
       <div className="flex items-baseline  font-bold font-commissioner uppercase ">
-        <div className="text-3xl mr-8">01/</div>
-        <h1 className="text-6xl">
+        <div className="text-fluid-h4 mr-[1em]">01/</div>
+        <h2 className="text-fluid-h2 font-extrabold tracking-wide">
           {title}
-        </h1>
+        </h2>
       </div>
     </div>
   );
