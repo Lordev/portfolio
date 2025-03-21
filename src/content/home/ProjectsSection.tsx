@@ -5,30 +5,8 @@ import Chip from "@/components/ui/Chip";
 export default function ProjectsSection() {
   return (
     <section className="row in-container relative">
-      <div className="absolute left-0 top-0 w-screen pl-[var(--p-fluid-md)]">
-        <div className="relative w-512 h-376 ">
-          <div className="absolute w-3/4">
-            <h5 className="text-fluid-h5">
-              “I’m a web enthusiast who loves turning ideas into interactive
-              experiences.”
-            </h5>
-          </div>
-          <div className="absolute -left-120 -top-120 w-full h-full">
-            <Image
-              src={"/projects/blob.svg"}
-              alt="Project 1"
-              layout="fill"
-              className="-z-10 "
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="float-right">
-        <SectionHeading title="Projects" />
-      </div>
-      <div className="py-240">
-        <div className="relative">
+      <div className="py-120 grid grid-cols-3 gap-24">
+        <div className="relative col-span-2">
           <Image
             className="w-full"
             src="/projects/strategysphere-frame.png"
@@ -42,24 +20,33 @@ export default function ProjectsSection() {
             </button>
           </div>
         </div>
-        <div className="w-4/5 mx-auto grid py-32 grid-cols-[repeat(2,auto)]">
-          <div className="border-primary-500 border-r-2 h-full min-h-106 pr-32 flex items-center">
-            <h6 className="text-nowrap uppercase font-medium text-body-col-3 text-fluid-h6">
-              StrategySphere Advisors
-            </h6>
-          </div>
-          <div className="grid grid-cols-2 gap-24 items-center px-48">
-            <div>
-              <p className="text-gray-400 text-body-col-3">
-              I created this modern website for Strategysphere Advisors, a consulting office.
-              </p>
+        <div className="flex flex-col justify-between">
+          <SectionHeading title="Projects" />
+          <div className="flex flex-col gap-48">
+            <div className="flex flex-col gap-32">
+              <h6 className="text-nowrap uppercase font-medium text-body-col-3 text-fluid-h6">
+                StrategySphere Advisors
+              </h6>
+              <hr className="border-primary-800 border-b-2 w-92" />
             </div>
-            <div className="flex flex-wrap gap-16">
-              <Chip label="TypeScript" />
-              <Chip label="React" />
-              <Chip label="Tailwind CSS" />
-              <Chip label="Next.js" />
-              <Chip label="Node.js" />
+            <div className="flex flex-col gap-24">
+              <div>
+                <p className="text-gray-400 text-body-col-3">
+                   I developed a modern, responsive website for Strategysphere
+                  Advisors, handling full-stack development with TypeScript,
+                  React, and Next.js. The design visuals was created using
+                  Figma. I integrated Sanity.io as a headless CMS for the blog
+                  section, enabling easy updates and scalability
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-16">
+                <Chip label="TypeScript" />
+                <Chip label="React" />
+                <Chip label="Tailwind CSS" />
+                <Chip label="Next.js" />
+                <Chip label="Node.js" />
+                <Chip label="Figma" />
+              </div>
             </div>
           </div>
         </div>
