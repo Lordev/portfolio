@@ -140,9 +140,10 @@
   --text-fluid-h1: var(--h1FontSize);
   --text-fluid-h2: var(--h2FontSize);
   --text-fluid-h3: var(--h3FontSize);
-  --text-fluid-h3--line-height: 1.1em;
+  --text-fluid-h3--line-height: 1.2em;
   --text-fluid-h4: var(--h4FontSize);
   --text-fluid-h5: var(--h5FontSize);
+  --text-fluid-h5--line-height: 1.4em;
   --text-fluid-h6: var(--h6FontSize);
 
   --text-fluid-display1: var(--display1FontSize);
