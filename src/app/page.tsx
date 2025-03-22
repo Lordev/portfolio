@@ -1,7 +1,8 @@
 import Nav from "@/components/layout/Nav";
-import AboutSection from "@/content/home/AboutSection";
 import Hero from "@/content/home/Hero";
+import AboutSection from "@/content/home/AboutSection";
 import ProjectsSection from "@/content/home/ProjectsSection";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
             <Hero />
             <AboutSection />
             <ProjectsSection />
+            <Footer />
         </div>
     )
 }
