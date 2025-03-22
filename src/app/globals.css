@@ -31,11 +31,13 @@
 
   /* 28px */
   --labelFontSize1: calc(1.4583 * var(--vw) * var(--fontSizeMultiplier));
-  /* 16px */
-  --labelFontSize2: calc(0.8333 * var(--vw) * var(--fontSizeMultiplier));
+  /* 20px */
+  --labelFontSize2: calc(1.0417 * var(--vw) * var(--fontSizeMultiplier));
   /* 11px */
   --labelFontSize3: calc(0.5729 * var(--vw) * var(--fontSizeMultiplier));
 
+  /* 14px */
+  --titleFontSize3: calc(0.7292 * var(--vw) * var(--fontSizeMultiplier));
 
   /* 80px */
   --h1FontSize: calc(4,1667 * var(--vw) * var(--fontSizeMultiplier)); 
@@ -136,6 +138,8 @@
   --text-label-sm--line-height: 1.5em;
   --text-label-md: var(--labelFontSize2);
   --text-label-lg: var(--labelFontSize1);
+
+  --text-title-sm: var(--titleFontSize3);
 
   --text-fluid-h1: var(--h1FontSize);
   --text-fluid-h2: var(--h2FontSize);
