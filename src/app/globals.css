@@ -68,7 +68,7 @@
   --defaultFlexDirectionReverse: row-reverse;
   --defaultFlexDirectionVerticalReverse: column-reverse;
 
-  --containerWidth: calc(87.5 * var(--vw));
+  --containerWidth: calc(95 * var(--vw));
   
   --p-fluid-md: calc((100% - var(--containerWidth)) / 2);
 }
@@ -376,6 +376,7 @@
   p:not(:last-child) {
     margin-bottom: var(--marpadSmall);
   }
+
 
   .col {
     padding: var(--marpadNormal);

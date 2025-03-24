@@ -1,12 +1,26 @@
 export default function Nav() {
   return (
-    <nav>
-      <div className="flex gap-3 py-16 border-white border-b px-12 justify-between items-center">
+    <nav className="fixed w-full z-50 mix-blend-difference">
+    <div className="flex gap-3 py-32 px-[var(--p-fluid-md)] justify-between items-center">
         <span className="uppercase font-semibold">
           I design stuff
         </span>
-        <svg
-          className="h-32 w-32"
+        <div className="flex gap-32">
+          <a href="#" className="text-gray-300 hover:text-primary transition-colors text-label-md font-medium uppercase ">
+            Home
+          </a>
+          <a href="#" className="text-gray-300 hover:text-primary transition-colors text-label-md font-medium uppercase ">
+            About
+          </a>
+          <a href="#" className="text-gray-300 hover:text-primary transition-colors text-label-md font-medium uppercase ">
+            Projects
+          </a>
+          <a href="#" className="text-gray-300 hover:text-primary transition-colors text-label-md font-medium uppercase ">
+            Contact
+          </a>
+        </div>
+        {/* <svg
+          className="h-32 w-32 cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 28 28"
         >
@@ -20,7 +34,7 @@ export default function Nav() {
             strokeWidth="2"
           ></line>
           <path d="M1 20h24v2H1z" fill="currentColor"></path>
-        </svg>
+        </svg> */}
       </div>
     </nav>
   );
