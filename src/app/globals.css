@@ -68,7 +68,7 @@
   --defaultFlexDirectionReverse: row-reverse;
   --defaultFlexDirectionVerticalReverse: column-reverse;
 
-  --containerWidth: calc(95 * var(--vw));
+  --containerWidth: calc(90 * var(--vw));
   
   --p-fluid-md: calc((100% - var(--containerWidth)) / 2);
 }
