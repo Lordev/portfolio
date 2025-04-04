@@ -6,7 +6,6 @@ import {
   easeIn,
 } from "framer-motion";
 import Image from "next/image";
-import HeroCTA from "./HeroCTA";
 
 interface HeroContentProps {
   scrollYProgress: MotionValue<number>;
@@ -34,21 +33,17 @@ export default function HeroContent({
 
   return (
     <>
+      d
       <motion.div
-        className="absolute w-1000 aspect-[1206/1162] top-550 left-1/2 -translate-x-1/2"
         style={{
-          y: useTransform(scrollYProgress, [0, 1], ["0vw", "20vw"], easeIn),
-          opacity: (
-            useTransform(scrollYProgress, [0.25, 1], [1, 0])
-          ),
-          zIndex: useTransform(scrollYProgress, [0.25, 1], [10, -10]),
+          y: useTransform(scrollYProgress, [0, 1], ['0%', '100%'], easeIn),
         }}
+        className="absolute w-full top-0 left-0 h-1126"
       >
         <Image
-          src="/hero/hero-image.png"
-          alt="Picture of the author"
+          src="/hero/hero-background.png"
           layout="fill"
-          className=""
+          alt=""
         />
       </motion.div>
       <div className="absolute top-700 left-800 w-800 h-800 bg-radial from-purple-950 to-50% to-[var--background] rounded-md -z-10"></div>
@@ -57,17 +52,37 @@ export default function HeroContent({
           y: useTransform(scrollYProgress, [0, 1], [0, -500]),
         }}
       >
-      <HeroCTA />
       </motion.div>
-      <motion.div
-        className="absolute top-120 w-1403 h-536 left-1/2 -translate-x-1/2 z-10 mix-blend-difference"
-        style={{
-          opacity: opacityText,
-          y: transformYText
-        }}
-      >
-        <Image src="/hero/hero-heading.svg" alt="" layout="fill" />
-      </motion.div>
+      <div className="mt-140 w-1208 mx-auto h-600 gap-24 relative">
+        <h5 className="text-fluid-h5 uppercase tracking-widest mb-32">
+          <div className="">Lorenzo</div>
+          <div className="ml-138">Sallons</div>
+        </h5>
+        <h1 className="text-fluid-display1 font-display uppercase text-primary-500 text-center row-start-2 col-start-4">
+          Builds
+        </h1>
+        <div className="flex mt-32 justify-between">
+          <div className="text-neutral-700">
+            <p className="text-fluid-body-sm">based in</p>
+            <p className="uppercase ml-48 text-fluid-body-sm">Rotterdam</p>
+          </div>
+          <h5 className="text-fluid-h5 uppercase tracking-widest mb-32 flex items-end  flex-col">
+            <div className="mr-90">Creative</div>
+            <div>Solutions</div>
+            <div className="mr-58">Digital</div>
+            <div className="mr-58">Memories</div>
+          </h5>
+        </div>
+        <div className="rotate-90 text-fluid-body-sm tracking-widest absolute left-0 top-1/2 -translate-y-1/2 uppercase text-neutral-700 -ml-50">
+          <p className="text-fluid-body-sm">Frontend</p>
+          <p className="text-fluid-body-sm ml-44">Developer</p>
+        </div>
+      </div>
+      <div className="flex justify-between mt-180 items-end">
+        <p className="underline">
+          Local time: 21:39 {"("}9.39PM{")"}
+        </p>
+      </div>
     </>
   );
 }

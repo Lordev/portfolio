@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Commissioner } from "next/font/google";
+import { Montserrat, League_Gothic } from "next/font/google";
+import { ReactLenis } from "lenis/react";
 import "./globals.css";
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
 
-const commissioner = Commissioner({
-  variable: "--font-commissioner",
+ 
+const leagueGothic = League_Gothic({
+  variable: "--font-league-gothic",
   subsets: ["latin"],
 });
 
@@ -19,12 +25,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${commissioner.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.05,
+        easing: 0.1,
+        smoothWheel: true,
+      }}
+    >
+      <html lang="en">
+        <body className={`${montserrat.variable} ${leagueGothic.variable} antialiased`}>
+          {children}
+        </body>
+      </html>
+    </ReactLenis>
   );
 }

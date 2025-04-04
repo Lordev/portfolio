@@ -15,8 +15,22 @@
   --primary-800: #7f2b00;
   --primary-900: #5a1c00;
 
+  --neutral-50: #FFFFFF;
+  --neutral-100: #E5E2E1;
+  --neutral-200: #C9C6C5;
+  --neutral-300: #ADAAAA;
+  --neutral-400: #929090;
+  --neutral-500: #787776;
+  --neutral-600: #5F5E5E;
+  --neutral-700: #484646;
+  --neutral-800: #313030;
+  --neutral-900: #1C1B1B;
+
+  --secondary-500: #64BAAA;
+
   --vw: 1vw;
 
+  --spacing: 0.0521vw;
   
   --marpadTiny: calc(0,2083 * var(--vw) * var(--marpadMultiplier));
   --marpadSmaller: calc(0.5 * var(--vw) * var(--marpadMultiplier));
@@ -26,8 +40,12 @@
   --marpadBigger: calc(6.25 * var(--vw) * var(--marpadMultiplier));
 
   /* sizes based on 1920w */
+  /* 14px */
+  --bodyFontSizeSm: calc(0.7292 * var(--vw) * var(--fontSizeMultiplier)); 
   /* 16px  */
   --bodyFontSize: calc(0.8333 * var(--vw) * var(--fontSizeMultiplier)); 
+  /* 18px */
+  --bodyFontSizeLg: calc(0.9375 * var(--vw) * var(--fontSizeMultiplier));
 
   /* 28px */
   --labelFontSize1: calc(1.4583 * var(--vw) * var(--fontSizeMultiplier));
@@ -40,20 +58,20 @@
   --titleFontSize3: calc(0.7292 * var(--vw) * var(--fontSizeMultiplier));
 
   /* 80px */
-  --h1FontSize: calc(4,1667 * var(--vw) * var(--fontSizeMultiplier)); 
+  --h1FontSize: calc(4.1667 * var(--vw) * var(--fontSizeMultiplier)); 
   /* 64px */
   --h2FontSize: calc(3.3333 * var(--vw) * var(--fontSizeMultiplier));
   /* 48px */
   --h3FontSize: calc(2.5 * var(--vw) * var(--fontSizeMultiplier));
-  /* 32px */
-  --h4FontSize: calc(1.6667 * var(--vw) * var(--fontSizeMultiplier));
-  /* 24px */
-  --h5FontSize: calc(1.25 * var(--vw) * var(--fontSizeMultiplier));
+  /* 36px */
+  --h4FontSize: calc(1.875 * var(--vw) * var(--fontSizeMultiplier));
+  /* 28px */
+  --h5FontSize: calc(1.4583 * var(--vw) * var(--fontSizeMultiplier));
   /* 20px */
   --h6FontSize: calc(1.0417 * var(--vw) * var(--fontSizeMultiplier));
 
-  /* 160px */
-  --display1FontSize: calc(8.3333 * var(--vw) * var(--fontSizeMultiplier));
+  /* 500px */
+  --display1FontSize: calc(26.0417 * var(--vw) * var(--fontSizeMultiplier));
   /* 140px */
   --display2FontSize: calc(7.2917 * var(--vw) * var(--fontSizeMultiplier));
   /* 120px */
@@ -68,7 +86,7 @@
   --defaultFlexDirectionReverse: row-reverse;
   --defaultFlexDirectionVerticalReverse: column-reverse;
 
-  --containerWidth: calc(90 * var(--vw));
+  --containerWidth: calc(95 * var(--vw));
   
   --p-fluid-md: calc((100% - var(--containerWidth)) / 2);
 }
@@ -126,13 +144,33 @@
   --color-primary-800: var(--primary-800);
   --color-primary-900: var(--primary-900);
 
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+
+  --color-secondary-500: #64BAAA;
+
   /* font-family */
-  --font-commissioner: var(--font-commissioner);
+  --font-body: var(--font-montserrat);
+  --font-heading: var(--font-montserrat);
+  --font-display: var(--font-league-gothic);
 
   /* 1px on 1920px */
   --spacing: 0.0521vw;
 
-  --text-body: var(--bodyFontSize);
+  --text-fluid-body-sm: var(--bodyFontSizeSm);
+  --text-fluid-body-sm--line-height: 1.5em;
+  --text-fluid-body-sm--letter-spacing: .08em;
+  --text-fluid-body-sm--line-height: 2em;
+  --text-fluid-body: var(--bodyFontSize);
+  --text-fluid-body-lg: var(--bodyFontSizeLg);
 
   --text-label-sm: var(--labelFontSize3);
   --text-label-sm--line-height: 1.5em;
@@ -143,15 +181,23 @@
 
   --text-fluid-h1: var(--h1FontSize);
   --text-fluid-h2: var(--h2FontSize);
+  --text-fluid-h2--line-height: 1.1em;
+  --text-fluid-h2--font-weight: 800;
   --text-fluid-h3: var(--h3FontSize);
   --text-fluid-h3--line-height: 1.2em;
   --text-fluid-h4: var(--h4FontSize);
+  --text-fluid-h4--line-height: 1.2em;
+  --text-fluid-h4--letter-spacing: .03em;
   --text-fluid-h5: var(--h5FontSize);
   --text-fluid-h5--line-height: 1.4em;
   --text-fluid-h6: var(--h6FontSize);
+  --text-fluid-h6--line-height: 1.5em;
+  --text-fluid-h6--letter-spacing: .1em;
+  --text-fluid-h6--font-weight: 500;
 
   --text-fluid-display1: var(--display1FontSize);
-  --text-fluid-display1--line-height: 0.8em;
+  --text-fluid-display1--letter-spacing: -.01em;
+  --text-fluid-display1--line-height: .75em;
   --text-fluid-display2: var(--display2FontSize);
   --text-fluid-display2--line-height: 0.8em;
   --text-fluid-display3: var(--display3FontSize);
@@ -176,6 +222,16 @@
   --gap-96: max(6rem, calc(5.2rem + 0.8vw));
   --gap-160: max(10rem, calc(8.5rem + 1.5vw));
 
+}
+
+@layer base {
+  p {
+    @apply text-neutral-300
+  }
+
+  small{
+    @apply text-neutral-300
+  }
 }
 
 @layer utilities {
