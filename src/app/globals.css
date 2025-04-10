@@ -9,7 +9,7 @@
   --primary-200: #ffb599;
   --primary-300: #ff8c5d;
   --primary-400: #f66018;
-  --primary-500: #ea580c;
+  --primary-500: #FD4D02;
   --primary-600: #a73a00;
   --primary-700: #933200;
   --primary-800: #7f2b00;
@@ -28,11 +28,13 @@
 
   --secondary-500: #64BAAA;
 
+  --header-height: calc(var(--spacing) * 84);
+
   --vw: 1vw;
 
   --spacing: 0.0521vw;
   
-  --marpadTiny: calc(0,2083 * var(--vw) * var(--marpadMultiplier));
+  --marpadTiny: calc(0.2083 * var(--vw) * var(--marpadMultiplier));
   --marpadSmaller: calc(0.5 * var(--vw) * var(--marpadMultiplier));
   --marpadSmall: calc(1.3 * var(--vw) * var(--marpadMultiplier));
   --marpadNormal: calc(2 * var(--vw) * var(--marpadMultiplier));
@@ -47,12 +49,12 @@
   /* 18px */
   --bodyFontSizeLg: calc(0.9375 * var(--vw) * var(--fontSizeMultiplier));
 
-  /* 28px */
-  --labelFontSize1: calc(1.4583 * var(--vw) * var(--fontSizeMultiplier));
-  /* 20px */
-  --labelFontSize2: calc(1.0417 * var(--vw) * var(--fontSizeMultiplier));
-  /* 11px */
-  --labelFontSize3: calc(0.5729 * var(--vw) * var(--fontSizeMultiplier));
+  /* 24px */
+  --labelFontSize1: calc(1.25 * var(--vw) * var(--fontSizeMultiplier));
+  /* 16px */
+  --labelFontSize2: calc(0.8333 * var(--vw) * var(--fontSizeMultiplier));
+  /* 12px */
+  --labelFontSize3: calc(0.625 * var(--vw) * var(--fontSizeMultiplier));
 
   /* 14px */
   --titleFontSize3: calc(0.7292 * var(--vw) * var(--fontSizeMultiplier));
@@ -70,8 +72,8 @@
   /* 20px */
   --h6FontSize: calc(1.0417 * var(--vw) * var(--fontSizeMultiplier));
 
-  /* 500px */
-  --display1FontSize: calc(26.0417 * var(--vw) * var(--fontSizeMultiplier));
+  /* 364px */
+  --display1FontSize: calc(18.9583 * var(--vw) * var(--fontSizeMultiplier));
   /* 140px */
   --display2FontSize: calc(7.2917 * var(--vw) * var(--fontSizeMultiplier));
   /* 120px */
@@ -89,6 +91,8 @@
   --containerWidth: calc(95 * var(--vw));
   
   --p-fluid-md: calc((100% - var(--containerWidth)) / 2);
+
+  --shadow-custom-lg: calc(-5.2604 * var(--vw)) calc(6.0938 * var(--vw)) calc(1.7708 * var(--vw)) rgba(0, 0, 0, 0.33);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -158,6 +162,7 @@
   --color-secondary-500: #64BAAA;
 
   /* font-family */
+  --font-mono: var(--font-fira-mono);
   --font-body: var(--font-montserrat);
   --font-heading: var(--font-montserrat);
   --font-display: var(--font-league-gothic);
@@ -170,12 +175,23 @@
   --text-fluid-body-sm--letter-spacing: .08em;
   --text-fluid-body-sm--line-height: 2em;
   --text-fluid-body: var(--bodyFontSize);
+  --text-fluid-body--line-height: 1.5em;
+  --text-fluid-body--letter-spacing: .03em;
+  --text-fluid-body--font-weight: 200;
   --text-fluid-body-lg: var(--bodyFontSizeLg);
 
   --text-label-sm: var(--labelFontSize3);
   --text-label-sm--line-height: 1.5em;
+  --text-label-sm--font-family: var(--font-support);
+  --text-label-sm--letter-spacing: .12em;
   --text-label-md: var(--labelFontSize2);
+  --text-label-md--line-height: 1.5em;
+  --text-label-md--letter-spacing: .1em;
+  --text-label-md--font-weight: 400;
   --text-label-lg: var(--labelFontSize1);
+  --text-label-lg--line-height: .8em;
+  --text-label-lg--letter-spacing: .1em;
+  --text-label-lg--font-weight: 400;
 
   --text-title-sm: var(--titleFontSize3);
 
@@ -189,7 +205,7 @@
   --text-fluid-h4--line-height: 1.2em;
   --text-fluid-h4--letter-spacing: .03em;
   --text-fluid-h5: var(--h5FontSize);
-  --text-fluid-h5--line-height: 1.4em;
+  --text-fluid-h5--line-height: 1.2em;
   --text-fluid-h6: var(--h6FontSize);
   --text-fluid-h6--line-height: 1.5em;
   --text-fluid-h6--letter-spacing: .1em;
@@ -197,7 +213,7 @@
 
   --text-fluid-display1: var(--display1FontSize);
   --text-fluid-display1--letter-spacing: -.01em;
-  --text-fluid-display1--line-height: .75em;
+  --text-fluid-display1--line-height: .735em;
   --text-fluid-display2: var(--display2FontSize);
   --text-fluid-display2--line-height: 0.8em;
   --text-fluid-display3: var(--display3FontSize);
@@ -208,6 +224,9 @@
   --text-fluid-display5--line-height: 1em;
   --text-fluid-display6: var(--display6FontSize);
   --text-fluid-display6--line-height: 1.2em;
+
+  --shadow-custom-lg: var(--shadow-custom-lg); 
+  --drop-shadow-custom-lg: var(--shadow-custom-lg);
 
 
   /* gap */
@@ -226,7 +245,6 @@
 
 @layer base {
   p {
-    @apply text-neutral-300
   }
 
   small{
@@ -319,9 +337,11 @@
 
   body {
     background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-commissioner);
+    color: var(--color-neutral-50);
+    font-family: var(--font-montserrat);
     line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   p {
@@ -428,12 +448,6 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
   }
-
-  p:not(:last-child) {
-    margin-bottom: var(--marpadSmall);
-  }
-
-
   .col {
     padding: var(--marpadNormal);
     flex-grow: 1;
@@ -453,7 +467,6 @@
 
 
   .row.in-container {
-    margin-top: var(--marpadBigger);
     width: 100%;
     padding-left: calc((100% - var(--containerWidth)) / 2);
     padding-right: calc((100% - var(--containerWidth)) / 2);

@@ -1,10 +1,5 @@
 "use client";
-import {
-  motion,
-  useTransform,
-  MotionValue,
-  easeIn,
-} from "framer-motion";
+import { motion, useTransform, MotionValue, easeIn } from "framer-motion";
 import Image from "next/image";
 
 interface HeroContentProps {
@@ -14,75 +9,77 @@ interface HeroContentProps {
 export default function HeroContent({
   scrollYProgress,
 }: HeroContentProps) {
-  const transformYText = useTransform(scrollYProgress, [0, 1], ["0vw", "80vw"]);
-  
-
-  const opacityText = (
-    useTransform(scrollYProgress, [0.7, 1], [1, 0], {
-      damping: 1000,
-      stiffness: 200,
-    })
-  );
-
-  const rotate360 = (
-    useTransform(scrollYProgress, [0, 1], [0, 180], {
-      damping: 100,
-      stiffness: 20,
-    })
-  );
-
   return (
-    <>
-      d
+    <div className="grid grid-cols-[1fr_auto_1fr] relative h-1080">
+      <div className="border-r-1 border-r-neutral-700 relative">
+        <Image
+        className="absolute -translate w-296 h-268 -x-1/2 left-0 bottom-160 -z-10"
+        src={"/_shared/img-wireframe-box.svg"} alt="" width={296} height={268}
+        
+        />
+      <div className="flex justify-between mt-180 items-end z-10">
+        {/* <p className="underline">
+          Local time: 21:39 {"("}9.39PM{")"}
+        </p> */}
+        <div className="text-neutral-700 absolute top-160 left-0 [writing-mode:vertical-rl] ">
+            <p className="text-label-sm uppercase font-mono leading-tight">an eye for the</p>
+            <p className="text-label-sm uppercase font-mono leading-tight mt-16">little details</p>
+          </div>
+        </div>
+      </div>
       <motion.div
         style={{
-          y: useTransform(scrollYProgress, [0, 1], ['0%', '100%'], easeIn),
+          y: useTransform(scrollYProgress, [0, 1], ['0%', '50%'], easeIn),
         }}
-        className="absolute w-full top-0 left-0 h-1126"
+        className="absolute -translate-x-1/2 left-1/2  top-0 h-full -z-10 col-start-2 col-end-3 w-full "
       >
         <Image
           src="/hero/hero-background.png"
           layout="fill"
+          objectFit="cover"
           alt=""
         />
       </motion.div>
-      <div className="absolute top-700 left-800 w-800 h-800 bg-radial from-purple-950 to-50% to-[var--background] rounded-md -z-10"></div>
-         <motion.div
-        style={{
-          y: useTransform(scrollYProgress, [0, 1], [0, -500]),
-        }}
-      >
-      </motion.div>
-      <div className="mt-140 w-1208 mx-auto h-600 gap-24 relative">
-        <h5 className="text-fluid-h5 uppercase tracking-widest mb-32">
-          <div className="">Lorenzo</div>
-          <div className="ml-138">Sallons</div>
-        </h5>
-        <h1 className="text-fluid-display1 font-display uppercase text-primary-500 text-center row-start-2 col-start-4">
-          Builds
+      <div className="gap-24 relative flex justify-end col-start-2 col-end-2 w-946">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-80 after:content:">
+          <span className="uppercase font-mono text-label-md">scroll down</span>
+        </div>
+        <div className="text-fluid-display1 font-display uppercase text-primary-500 flex flex-col gap-16 items-end mt-84">
+          <div className="mr-32">Create.</div>
+          <div className="mr-524">Code.</div>
+          <div className="-mr-6">Deliver.</div>
+        </div>
+        <h1 className="text-fluid-body uppercase absolute bottom-440 left-498">
+          <div>Frontend <span className="font-normal">developer</span></div> 
+          <div className="ml-58">creating <span className="font-normal">digital art</span> </div>
         </h1>
-        <div className="flex mt-32 justify-between">
-          <div className="text-neutral-700">
-            <p className="text-fluid-body-sm">based in</p>
-            <p className="uppercase ml-48 text-fluid-body-sm">Rotterdam</p>
+      </div>
+
+      <div className=" col-start-3 border-l-1 border-l-neutral-700 relative">
+        <div className="border-l-1 flex flex-col gap-24 pl-24 ml-108 mt-[calc(var(--header-height)+calc(var(--spacing)*28))]">
+          <a
+            href="#"
+            className="hover:text-primary transition-colors text-label-lg font-mono uppercase "
+          >
+            Projects
+          </a>
+          <a
+            href="#"
+            className="hover:text-primary transition-colors text-label-lg font-mono uppercase "
+          >
+            About
+          </a>
+          <a
+            href="#"
+            className="hover:text-primary transition-colors text-label-lg font-mono uppercase "
+          >
+            Contact
+          </a>
           </div>
-          <h5 className="text-fluid-h5 uppercase tracking-widest mb-32 flex items-end  flex-col">
-            <div className="mr-90">Creative</div>
-            <div>Solutions</div>
-            <div className="mr-58">Digital</div>
-            <div className="mr-58">Memories</div>
-          </h5>
+        <div className="text-neutral-700 absolute bottom-160 right-0 [writing-mode:vertical-rl]">
+            <p className="text-label-sm uppercase font-mono leading-none">based in Rotterdam</p>
+          </div>
         </div>
-        <div className="rotate-90 text-fluid-body-sm tracking-widest absolute left-0 top-1/2 -translate-y-1/2 uppercase text-neutral-700 -ml-50">
-          <p className="text-fluid-body-sm">Frontend</p>
-          <p className="text-fluid-body-sm ml-44">Developer</p>
-        </div>
-      </div>
-      <div className="flex justify-between mt-180 items-end">
-        <p className="underline">
-          Local time: 21:39 {"("}9.39PM{")"}
-        </p>
-      </div>
-    </>
+    </div>
   );
 }

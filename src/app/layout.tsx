@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, League_Gothic } from "next/font/google";
+import { Montserrat, League_Gothic, Fira_Mono } from "next/font/google";
 import { ReactLenis } from "lenis/react";
 import "./globals.css";
 
@@ -8,7 +8,13 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
- 
+const firaMono = Fira_Mono({
+  variable: "--font-fira-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
+  
+
 const leagueGothic = League_Gothic({
   variable: "--font-league-gothic",
   subsets: ["latin"],
@@ -34,7 +40,9 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body className={`${montserrat.variable} ${leagueGothic.variable} antialiased`}>
+        <body
+          className={`${firaMono.variable} ${montserrat.variable} ${leagueGothic.variable} antialiased`}
+        >
           {children}
         </body>
       </html>

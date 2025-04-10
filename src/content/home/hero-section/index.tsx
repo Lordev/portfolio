@@ -8,7 +8,7 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <ScrollContainer containerRef={containerRef} className="h-1126 relative px-[var(--p-fluid-md)] -z-10 overflow-hidden -mb-40">
+    <ScrollContainer containerRef={containerRef} className="relative px-[var(--p-fluid-md)] -z-10  overflow-hidden gap-24">
       {(scrollYProgress) => (
         <>
           <HeroContent scrollYProgress={scrollYProgress} />
