@@ -1,4 +1,3 @@
-import { useSmoothScroll } from '@/lib/context/SmoothScrollContext'
 import Link, { LinkProps } from 'next/link'
 
 type ButtonOrLinkProps =
@@ -14,8 +13,6 @@ export default function LinkLine(props: ButtonOrLinkProps) {
         label: string
         size: 'lg' | 'md' | 'sm'
     }
-    const { setTargetSection } = useSmoothScroll()
-
     const sizeClasses = {
         lg: 'text-title-lg lg:text-title-xl',
         md: 'text-title-sm md:text-title-md lg:text-title-lg',
@@ -29,9 +26,6 @@ export default function LinkLine(props: ButtonOrLinkProps) {
             <div className="relative">
                 <button
                     {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
-                    onClick={() => {
-                        setTargetSection(label)
-                    }}
                     className={classNames}
                 >
                     {label}

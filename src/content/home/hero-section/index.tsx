@@ -7,7 +7,7 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <ScrollContainer containerRef={containerRef} className="lg:px-[var(--padding-container)]  overflow-hidden gap-24">
+    <ScrollContainer containerRef={containerRef} className="lg:px-[var(--padding-container)]  overflow-hidden gap-24" id='Home'>
       {(scrollYProgress) => (
         <>
           <HeroContent scrollYProgress={scrollYProgress} />

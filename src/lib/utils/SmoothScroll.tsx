@@ -8,33 +8,34 @@ import { useSmoothScroll } from '@/lib/context/SmoothScrollContext'
 export default function SmoothScroll({ children }: PropsWithChildren) {
     const lenisRef = useRef<LenisRef>(null)
     const { targetSection } = useSmoothScroll()
-    
+
     useEffect(() => {
-      if (!targetSection) return 
-      const lenis = lenisRef.current?.lenis
-      if (!lenis) return
+        if (!targetSection) return
+        const lenis = lenisRef.current?.lenis
+        if (!lenis) return
 
-      const scrollToTarget = () => { 
-          const targetElement = document.getElementById(targetSection) 
-          if (targetElement) {
-              lenis.scrollTo(targetElement, {
-                  duration: 1,
-                  easing: (t: number) => t, 
-              })
-          }
-      }
-      scrollToTarget()
+        const scrollToTarget = () => {
+            const targetElement = document.querySelector(targetSection)
+            if (targetElement) {
+                lenis.scrollTo(targetElement, {
+                    duration: 1,
+                    easing: (t: number) => t,
+                })
+            }
+        }
+        scrollToTarget()
+    }, [targetSection])
 
-      const animate = (time: number) => {
-          lenis.raf(time) 
-          requestAnimationFrame(animate)
-      }
+    useEffect(() => {
+        const lenis = lenisRef.current?.lenis
+        if (!lenis) return
 
-      const rafId = requestAnimationFrame(animate)
-
-      return () => cancelAnimationFrame(rafId) 
-  }, [targetSection]) 
-
+        const raf = () => {
+            lenis.raf()
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+    }, [])
 
     return (
         <ReactLenis

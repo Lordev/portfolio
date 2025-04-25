@@ -3,6 +3,7 @@ import { Montserrat, League_Gothic, Fira_Mono } from 'next/font/google'
 import SmoothScroll from '@/lib/utils/SmoothScroll'
 import './globals.css'
 import { SmoothScrollProvider } from '@/lib/context/SmoothScrollContext'
+import MobileMenuProvider from '@/lib/context/mobileMenuContext'
 
 const montserrat = Montserrat({
     variable: '--font-montserrat',
@@ -31,16 +32,18 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <SmoothScrollProvider>
-            <SmoothScroll>
-                <html lang="en" className="scroll-smooth">
-                    <body
-                        className={`${firaMono.variable} ${montserrat.variable} ${leagueGothic.variable} antialiased`}
-                    >
-                        {children}
-                    </body>
-                </html>
-            </SmoothScroll>
-        </SmoothScrollProvider>
+        <MobileMenuProvider>
+            <SmoothScrollProvider>
+                <SmoothScroll>
+                    <html lang="en" className="scroll-smooth">
+                        <body
+                            className={`${firaMono.variable} ${montserrat.variable} ${leagueGothic.variable} antialiased`}
+                        >
+                            {children}
+                        </body>
+                    </html>
+                </SmoothScroll>
+            </SmoothScrollProvider>
+        </MobileMenuProvider>
     )
 }

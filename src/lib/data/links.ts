@@ -1,21 +1,29 @@
-export const mobileNavLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '#Projects' },
-    { name: 'About', href: '#About' },
-    { name: 'Contact', href: '#Contact' },
-]
+import { SocialLinks, NavLink} from '@/lib/types'
 
-export const heroNavLinks = [
-    { name: 'Projects', href: '#Projects' },
-    { name: 'About', href: '#About' },
-    { name: 'Contact', href: '#Contact' },
-]
+export const mobileNavLinks: NavLink[] = [
+    { label: 'Home', href: '#Home' },
+    { label: 'Projects', href: '#Projects' },
+    { label: 'About', href: '#About' },
+    { label: 'Contact', href: '#Contact' },
+];
 
-export const socialLinks = [
-    { name: 'Github', href: 'https://www.github.com/lordev' },
-    {
-        name: 'Linkedin',
+export const heroNavLinks: NavLink[] = [
+    { label: 'Projects', href: '#Projects' },
+    { label: 'About', href: '#About' },
+    { label: 'Contact', href: '#Contact' },
+];
+
+export const socialLinks: SocialLinks = {
+    github: {
+        label: 'Github',
+        href: 'https://www.github.com/lordev',
+    },
+    linkedIn: {
+        label: 'Linkedin',
         href: 'https://www.linkedin.com/in/lorenzo-sallons-383945176',
     },
-    { name: 'lordev@gmail.com', href: 'mailto:lordev@gmail.com' },
-]
+    email: {
+        label: 'lorenzo.sallons.dev@gmail.com',
+        href: 'mailto:lordev@gmail.com',
+    },
+};

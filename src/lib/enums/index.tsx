@@ -5,3 +5,10 @@ export enum LinePosition {
     Right = 'right-0',
 
 }
+
+export enum Position {
+    Start = '',
+    Center = 'mx-auto',
+    End = 'ml-auto',
+  }
+  

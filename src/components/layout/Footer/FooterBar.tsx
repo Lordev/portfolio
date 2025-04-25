@@ -10,15 +10,15 @@ export default function FooterBar() {
                 </h6>
                 <div className="flex mt-10 gap-10 ">
                     <LinkLine
-                        href={socialLinks[0].href}
-                        label={socialLinks[0].name}
+                        href={socialLinks.github.href}
+                        label={socialLinks.github.label}
                     />
                     <div className="w-16 relative">
                         <div className="border-t-2 border-gray-500 absolute top-1/2 -translate-y-1/2 w-full "></div>
                     </div>
                     <LinkLine
-                        href={socialLinks[1].href}
-                        label={socialLinks[1].name}
+                        href={socialLinks.linkedIn.href}
+                        label={socialLinks.linkedIn.label}
                     />
                 </div>
             </div>
@@ -28,8 +28,8 @@ export default function FooterBar() {
                 </h6>
                 <div className="flex mt-10 gap-10">
                     <LinkLine
-                        href={socialLinks[2].href}
-                        label={socialLinks[2].name}
+                        href={socialLinks.email.href}
+                        label={socialLinks.email.label}
                     />
                 </div>
             </div>
