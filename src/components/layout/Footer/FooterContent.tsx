@@ -1,8 +1,6 @@
 import { motion, useTransform } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import { socialLinks } from '@/lib/data/links'
 import Image from 'next/image'
-import LinkLine from '@/components/ui/LinkLine'
 import FooterBar from './FooterBar'
 
 interface FooterContentProps {
