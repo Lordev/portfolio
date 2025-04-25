@@ -12,7 +12,6 @@ export const SmoothScrollProvider = ({ children }: { children: React.ReactNode }
     const [targetSection, setTargetSection] = useState<string>('')
 
     useEffect(() => {
-        console.log(targetSection)
     }, [targetSection])
 
     return (

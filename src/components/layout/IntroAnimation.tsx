@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import HeroHeading from '@/content/home/hero-section/HeroHeading'
 import { IntroVariants, IntroBarLeft, IntroBarRight } from '@/lib/utils/motion'
 
 export default function IntroAnimation() {
