@@ -8,9 +8,8 @@ const mobileMenuContext = createContext<MobileMenuContextProps | undefined>(
 
 interface MobileMenuContextProps {
     menuOpen: boolean
-    setMenuOpen: () => void
+    openMenu: () => void
     closeMenu: () => void
-    
 }
 
 export default function MobileMenuProvider({
