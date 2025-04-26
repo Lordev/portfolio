@@ -2,7 +2,7 @@ import LinkLine from '@/components/ui/LinkLine'
 import { socialLinks } from '@/lib/data/links'
 
 export default function MobileMenuSocialLinks() {
-    const links = Object.keys(socialLinks).map((link) => socialLinks[link])
+    const links = Object.keys(socialLinks).map((link) => socialLinks[link as keyof typeof socialLinks])
 
     return (
         <div className="mt-12">

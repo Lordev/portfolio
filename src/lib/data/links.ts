@@ -1,13 +1,13 @@
-import { SocialLinks, NavLink} from '@/lib/types'
+import { SocialLinks, Link} from '@/lib/types'
 
-export const mobileNavLinks: NavLink[] = [
+export const mobileNavLinks: Link[] = [
     { label: 'Home', href: '#Home' },
     { label: 'Projects', href: '#Projects' },
     { label: 'About', href: '#About' },
     { label: 'Contact', href: '#Contact' },
 ];
 
-export const heroNavLinks: NavLink[] = [
+export const heroNavLinks: Link[] = [
     { label: 'Projects', href: '#Projects' },
     { label: 'About', href: '#About' },
     { label: 'Contact', href: '#Contact' },
