@@ -1,18 +1,17 @@
 import Link, { LinkProps } from 'next/link'
 
-type ButtonOrLinkProps =
-    | React.ButtonHTMLAttributes<HTMLButtonElement>
-    | NextLinkProps
-
-interface NextLinkProps extends LinkProps {
-    href: string
+interface BaseProps {
+    label: string;
+    size?: 'lg' | 'md' | 'sm'; 
 }
 
+type ButtonOrLinkProps =
+    | (React.ButtonHTMLAttributes<HTMLButtonElement> & BaseProps)
+    | (LinkProps & BaseProps & { href: string });
+
+
 export default function LinkLine(props: ButtonOrLinkProps) {
-    const { label, size = 'md' } = props as {
-        label: string
-        size: 'lg' | 'md' | 'sm'
-    }
+    const { label, size = 'md' } = props as BaseProps
     const sizeClasses = {
         lg: 'text-title-lg lg:text-title-xl',
         md: 'text-title-sm md:text-title-md lg:text-title-lg',
@@ -36,7 +35,7 @@ export default function LinkLine(props: ButtonOrLinkProps) {
         return (
             <div className="relative">
                 <Link
-                    {...(props as NextLinkProps)}
+                    {...(props as LinkProps)}
                     href={props.href}
                     className={classNames}
                 >
