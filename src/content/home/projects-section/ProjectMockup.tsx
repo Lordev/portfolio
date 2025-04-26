@@ -3,8 +3,7 @@ import { ProjectData } from '@/lib/types'
 import Link from 'next/link'
 
 interface ProjectFrameProps {
-    data: ProjectData[]
-    currentProjectIndex: number
+    data: ProjectData
 }
 
 export default function ProjectMockup({ data }: ProjectFrameProps) {
@@ -13,8 +12,8 @@ export default function ProjectMockup({ data }: ProjectFrameProps) {
             <div className="relative w-full aspect-[1092/593]">
                 <Image
                     className="w-full h-full object-contain object-top"
-                    src={data.imageSrc}
-                    alt={data.imageAlt}
+                    src={data.image.imageSrc}
+                    alt={data.image.imageAlt}
                     fill
                 />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">

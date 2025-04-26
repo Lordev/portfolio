@@ -12,7 +12,7 @@ export default function ProjectsSection() {
         {
             title: 'StrategySphere Advisors',
             description: {
-                summary: ['Business website'],
+                summary: 'Business website',
                 highlights: [
                     "Dynamic blog integrated with Sanity.io's server-side filtering",
                     'Scalable architecture for easy adaptations ',
@@ -20,15 +20,17 @@ export default function ProjectsSection() {
                 ],
             },
             techStack: ['Next.js', 'Tailwind', 'Vercel', 'Sanity.io'],
-            imageSrc: '/projects/strategysphere-frame.png',
-            imageAlt: 'StrategySphere Advisors',
+            image: {
+                imageSrc: '/projects/strategysphere-frame.png',
+                imageAlt: 'StrategySphere Advisors',
+            },
             link: 'https://strategysphere-advisors.vercel.app/en',
             yearBuilt: '2024',
         },
         {
             title: 'Trade Tribe',
             description: {
-                summary: ['A Hiking boots custom e-commerce website'],
+                summary: 'A Hiking boots custom e-commerce website',
                 highlights: [
                     'WooCommerce integration',
                     'Fully Dynamic Content',
@@ -36,15 +38,17 @@ export default function ProjectsSection() {
                 ],
             },
             techStack: ['WordPress', 'WooCommerce', 'ACF'],
-            imageSrc: '/projects/trade-tribe-frame.png',
-            imageAlt: 'Trade Tribe',
+            image: {
+                imageSrc: '/projects/trade-tribe-frame.png',
+                imageAlt: 'Trade Tribe',
+            },
             link: 'https://www.trade-tribe.duckdns.org/',
             yearBuilt: '2025',
         },
         {
             title: 'Radiant festival',
             description: {
-                summary: ['A festival themed website'],
+                summary: 'A festival themed website',
                 highlights: [
                     'Payment integration with Stripe API',
                     'Framer Motion animations',
@@ -52,15 +56,17 @@ export default function ProjectsSection() {
                 ],
             },
             techStack: ['Next.js', 'Tailwind CSS', 'Stripe', 'Framer Motion'],
-            imageSrc: '/projects/radiant-festival-frame.png',
-            imageAlt: 'StrategySphere Advisors',
+            image: {
+                imageSrc: '/projects/radiant-festival-frame.png',
+                imageAlt: 'StrategySphere Advisors',
+            },
             link: 'https://radiant-festival.vercel.app/',
             yearBuilt: '2024',
         },
         {
             title: 'SP 01 - Mockup showcase',
             description: {
-                summary: ['Three.js website'],
+                summary: 'Three.js website',
                 highlights: [
                     'Headset 3D model with interactive features',
                     'Fully responsive design',
@@ -68,8 +74,10 @@ export default function ProjectsSection() {
                 ],
             },
             techStack: ['Next.js', 'Tailwind CSS', 'Three.js'],
-            imageSrc: '/projects/sp-01-frame.png',
-            imageAlt: 'StrategySphere Advisors',
+            image: {
+                imageSrc: '/projects/sp-01-frame.png',
+                imageAlt: 'StrategySphere Advisors',
+            },
             link: 'https://sp-01-model.vercel.app/',
             yearBuilt: '2024',
         },
@@ -83,16 +91,19 @@ export default function ProjectsSection() {
             >
                 <ScrollContainer
                     offset={['start start', 'end end']}
-                    style={{
-                        height: projectsData.length * 100 + 'vh',
-                    }}
                     containerRef={containerRef}
                 >
                     {(scrollYProgress) => (
-                        <ProjectsContent
-                            data={projectsData}
-                            scrollYProgress={scrollYProgress}
-                        />
+                        <div
+                            style={{
+                                height: projectsData.length * 100 + 'vh',
+                            }}
+                        >
+                            <ProjectsContent
+                                data={projectsData}
+                                scrollYProgress={scrollYProgress}
+                            />
+                        </div>
                     )}
                 </ScrollContainer>
             </motion.section>
