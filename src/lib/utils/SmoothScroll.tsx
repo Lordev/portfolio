@@ -15,7 +15,7 @@ export default function SmoothScroll({ children }: PropsWithChildren) {
         if (!lenis) return
 
         const scrollToTarget = () => {
-            const targetElement = document.querySelector(targetSection)
+            const targetElement = document.querySelector(targetSection) as HTMLElement | null;
             if (targetElement) {
                 lenis.scrollTo(targetElement, {
                     duration: 1,
@@ -30,10 +30,11 @@ export default function SmoothScroll({ children }: PropsWithChildren) {
         const lenis = lenisRef.current?.lenis
         if (!lenis) return
 
-        const raf = () => {
-            lenis.raf()
-            requestAnimationFrame(raf)
+        const raf = (time: number) => {
+            lenis.raf(time)
+            requestAnimationFrame(raf) 
         }
+
         requestAnimationFrame(raf)
     }, [])
 
@@ -41,11 +42,8 @@ export default function SmoothScroll({ children }: PropsWithChildren) {
         <ReactLenis
             options={{
                 duration: 2,
-                durationSmooth: 0.1,
                 orientation: 'vertical',
                 gestureOrientation: 'vertical',
-                smooth: true,
-                smoothTouch: false,
                 touchMultiplier: 2,
             }}
             root
