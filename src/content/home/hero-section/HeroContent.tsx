@@ -6,19 +6,17 @@ import HeroBackground from './HeroBackground'
 import HeroTag from './HeroTag'
 import HeroHeading from './HeroHeading'
 
-interface AnimatedContentProps {
+interface HeroContentProps {
     scrollYProgress: MotionValue<number>
 }
 
-export default function AnimatedContent({
+export default function HeroContent({
     scrollYProgress,
-}: AnimatedContentProps) {
-    const yTransform = useTransform(
-        scrollYProgress,
-        [0, 1],
-        ['0%', '50%'],
-        easeIn
-    )
+}: HeroContentProps) {
+    const yTransform = useTransform(scrollYProgress, [0, 1], ['0%', '50%'], {
+        clamp: false,
+        ease: easeIn,
+    })
 
     return (
         <div className="relative 2xl:h-screen lg:grid lg:grid-cols-12 gap-x-24 lg:h-852 2xl:max-h-1080 w-full 2xl:min-h-1080 xl:min-h-948 md:h-1000 xs:h-956 2xs:h-932 h-732">
@@ -30,9 +28,7 @@ export default function AnimatedContent({
                 width={296}
                 height={268}
             />
-            <div
-                className="lg:relative h-full w-full lg:border-l-1 lg:border-r-1 lg:border-neutral-800 lg:col-span-6 lg:col-start-4 justify-center flex flex-col"
-            >
+            <div className="lg:relative h-full w-full lg:border-l-1 lg:border-r-1 lg:border-neutral-800 lg:col-span-6 lg:col-start-4 justify-center flex flex-col">
                 <motion.div
                     style={{
                         y: yTransform,
@@ -41,7 +37,7 @@ export default function AnimatedContent({
                 >
                     <HeroBackground />
                 </motion.div>
-            <HeroHeading />
+                <HeroHeading />
             </div>
 
             <div className="col-start-11 col-span-1 -ml-24 max-lg:hidden">
