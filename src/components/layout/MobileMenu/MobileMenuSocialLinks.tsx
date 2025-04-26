@@ -15,7 +15,6 @@ export default function MobileMenuSocialLinks() {
                         <li key={link.href}>
                             <LinkLine
                                 href={link.href}
-                                target="_blank"
                                 label={link.label}
                             />
                         </li>

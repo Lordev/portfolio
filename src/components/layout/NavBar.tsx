@@ -1,6 +1,5 @@
 'use client'
 import MobileMenu from './MobileMenu/MobileMenu'
-import { useState } from 'react'
 import { useMobileMenu } from '@/lib/context/mobileMenuContext'
 
 export default function NavBar() {

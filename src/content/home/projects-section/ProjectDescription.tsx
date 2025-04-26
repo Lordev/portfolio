@@ -1,6 +1,6 @@
-import ProjectData from '@/lib/types'
+import { ProjectData } from '@/lib/types'
 import { motion } from 'framer-motion'
-import { revealText, splitReveal } from '@/lib/utils/motion'
+import { revealText } from '@/lib/utils/motion'
 
 interface ProjectDescriptionProps {
     data: ProjectData[]
@@ -23,7 +23,7 @@ export default function ProjectDescription({
                             <motion.span
                                 initial="hidden"
                                 animate="visible"
-                                variants={splitReveal}
+                                variants={revealText}
                             >
                                 {(currentProjectIndex + 1)
                                     .toString()
@@ -35,7 +35,7 @@ export default function ProjectDescription({
                             className="text-title-sm uppercase mt-8 text-nowrap "
                             initial="hidden"
                             animate="visible"
-                            variants={splitReveal}
+                            variants={revealText}
                         >
                             {data[currentProjectIndex].title}
                         </motion.h3>

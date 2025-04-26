@@ -1,11 +1,9 @@
 'use client'
 import { AnimatePresence, motion } from 'framer-motion'
 import { menuReveal, revealText } from '@/lib/utils/motion'
-import { mobileNavLinks } from '@/lib/data/links'
 import { useMobileMenu } from '@/lib/context/mobileMenuContext'
 import Portal from '@/lib/utils/Portal'
 import MobileMenuSocialLinks from './MobileMenuSocialLinks'
-import LinkLine from '@/components/ui/LinkLine'
 import MobileMenuNavLinks from './MobileMenuNavLinks'
 
 export default function MobileMenu() {
