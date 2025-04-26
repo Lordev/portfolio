@@ -105,8 +105,8 @@ export default function ProjectsContent({
                 <span className="uppercase font-label text-label-sm text-neutral-300 h-42">
                     scroll down
                 </span>
-                <VerticalLine />
             </div>
+            <VerticalLine LinePosition={LinePosition.Top} />
             <motion.div
                 className="sticky lg:top-0 top-72 pt-24 z-30 bg-gradient-to-b from-background from-50% to-transparent lg:grid lg:grid-cols-12 gap-x-24 "
                 style={HeadingAnimations}
@@ -202,7 +202,7 @@ export default function ProjectsContent({
                         </div>
                     </motion.div>
                 </motion.div>
-                <VerticalLine VerticalLinePosition={LinePosition.Bottom} />
+                <VerticalLine LinePosition={LinePosition.Bottom} />
             </AnimatePresence>
         </>
     )

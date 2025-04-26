@@ -1,14 +1,13 @@
-import { VerticalLinePosition } from "@/lib/enums"
+import { LinePosition } from '@/lib/enums'
 
 interface VerticalLineProps {
-    VerticalLinePosition: VerticalLinePosition
+    LinePosition?: LinePosition
 }
 
 export default function VerticalLine({
-    VerticalLinePosition: VerticalLinePosition}: VerticalLineProps) {
+    LinePosition,
+}: VerticalLineProps) {
     return (
-        <div
-            className={`h-120  ${VerticalLinePosition} w-1 bg-neutral-700 z-50`}
-        ></div>
+        <div className={`h-120  ${LinePosition} w-1 bg-neutral-700 z-50`}></div>
     )
 }
