@@ -1,10 +1,10 @@
-import { motion, useTransform } from 'framer-motion'
+import { motion, MotionValue, useTransform } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import FooterBar from './FooterBar'
 
 interface FooterContentProps {
-    scrollYProgress: number
+    scrollYProgress: MotionValue<number>
 }
 
 export default function FooterContent({ scrollYProgress }: FooterContentProps) {
@@ -17,7 +17,7 @@ export default function FooterContent({ scrollYProgress }: FooterContentProps) {
     useEffect(() => {
         if (container.current) {
             const handleResize = () => {
-                setHeight(container.current?.getBoundingClientRect().height)
+                setHeight(container.current?.getBoundingClientRect().height ?? 0)
             }
             const isMobile = window.innerWidth < 768
             setMobile(isMobile)
@@ -46,8 +46,8 @@ export default function FooterContent({ scrollYProgress }: FooterContentProps) {
                 <div
                     className="text-display font-display uppercase text-primary-500  gap-24 lg:grid-cols-12 lg:grid row in-container max-lg:flex max-lg:flex-col max-lg:mb-120"
                     style={{
-                        marginTop: !mobile && `${height}px`,
-                        marginBottom: mobile && `${height}px`,
+                        marginTop: !mobile ? `${height}px` :'0px',
+                        marginBottom: mobile ? `${height}px` : '0px',
                     }}
                 >
                     <div className="col-start-4">Ideas?</div>
