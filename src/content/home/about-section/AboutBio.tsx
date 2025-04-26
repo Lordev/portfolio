@@ -26,7 +26,7 @@ export default function AboutBio() {
                             Rotterdam-based frontend developer turning static 
                             websites into dynamic experiences. Skilled in modern 
                             web tech with a passion for thoughtful animation. 
-                            Beyond code, I like to create music and explore different aspects of design .
+                            Beyond code, I like to create music and explore different aspects of design.
                         </motion.p>
                     </div>
                 </div>
