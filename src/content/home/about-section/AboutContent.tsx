@@ -17,6 +17,7 @@ export default function AboutContent() {
                     initial="hidden"
                     whileInView="visible"
                     variants={moveRight}
+                    viewport={{ once: true, amount: 0.1 }}	    
                 >
                     <AboutImage />
                 </motion.div>
