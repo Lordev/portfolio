@@ -1,4 +1,4 @@
-import { motion, useTransform, useSpring, AnimatePresence } from 'framer-motion'
+import { motion, useTransform, useSpring, AnimatePresence, MotionValue } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { ProjectData } from '@/lib/types'
 import ProjectMockup from './ProjectMockup'
@@ -7,9 +7,8 @@ import VerticalLine from '@/components/ui/VerticalLine'
 import { LinePosition } from '@/lib/enums'
 
 interface ProjectsProps {
-    scrollYProgress: number
-    data: ProjectData
-    currentProjectIndex: number
+    scrollYProgress: MotionValue<number>
+    data: ProjectData[]
 }
 
 export default function ProjectsContent({
