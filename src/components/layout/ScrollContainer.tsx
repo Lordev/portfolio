@@ -1,25 +1,26 @@
-'use client';
-import { useScroll, MotionValue } from "framer-motion";
+import { MotionValue, useScroll } from 'framer-motion';
+import { ReactNode, RefObject } from 'react';
 
-interface ScrollContainerProps extends React.HTMLProps<HTMLDivElement> {
+interface ScrollContainerProps  {
+  className?: string;
   children: ((scrollYProgress: MotionValue<number>) => ReactNode) | ReactNode;
-  offset?: [string, string]; 
-  containerRef?: React.RefObject<HTMLDivElement>;
-}
+  offset?: [string, string];
+  containerRef?: RefObject<HTMLDivElement | null>; }
 
-export default function ScrollContainer({ 
-  children, 
-  offset=['start start', 'end start'],
+export default function ScrollContainer({
+  children,
+  offset = ['start end', 'end start'],
   containerRef,
-  ...props
+  className,
 }: ScrollContainerProps) {
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: offset,
+    offset: offset as any, // eslint-disable-line @typescript-eslint/no-explicit-any
   });
+
   return (
-    <div ref={containerRef} {...props}>
-      {typeof children === "function" ? children(scrollYProgress) : children}
+    <div ref={containerRef} className={className}>
+      {typeof children === 'function' ? children(scrollYProgress) : children}
     </div>
   );
 }

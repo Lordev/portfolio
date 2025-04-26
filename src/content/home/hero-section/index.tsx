@@ -1,18 +1,24 @@
-"use client";
-import { useRef } from "react";
-import ScrollContainer from "@/components/layout/ScrollContainer";
-import HeroContent from "./HeroContent";
+'use client'
+import { useRef } from 'react'
+import ScrollContainer from '@/components/layout/ScrollContainer'
+import HeroContent from './HeroContent'
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null)
 
-  return (
-    <ScrollContainer containerRef={containerRef} className="lg:px-[var(--padding-container)]  overflow-hidden gap-24" id='Home'>
-      {(scrollYProgress) => (
-        <>
-          <HeroContent scrollYProgress={scrollYProgress} />
-        </>
-      )}
-    </ScrollContainer>
-  );
+    return (
+        <section id="Home">
+            <ScrollContainer
+                containerRef={containerRef}
+                offset={['start start', 'end start']}
+                className="lg:px-[var(--padding-container)]  overflow-hidden gap-24"
+            >
+                {(scrollYProgress) => (
+                    <>
+                        <HeroContent scrollYProgress={scrollYProgress} />
+                    </>
+                )}
+            </ScrollContainer>
+        </section>
+    )
 }
