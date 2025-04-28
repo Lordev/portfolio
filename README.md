@@ -8,7 +8,6 @@ This project showcases my skills, experience, and accomplishments as a developer
 
 Feel free to explore the codebase, review the documentation, and check out the live demo where applicable. If you have any questions or would like to discuss potential opportunities, don't hesitate to reach out! 💬
 
-## 💻 Tech stacks
 ## 🛠️ Technologies Used
 
 🚀 Built with **Next.js 15** and **TypeScript 5**  
