@@ -1,4 +1,4 @@
-![Hero section with headline, navigation, and parallax background](/screenshots/hero-screenshot.jpg)
+![Hero section with headline, navigation, and parallax background](public/screenshots/hero-screenshot.jpg)
 
 #  Welcome to My Portfolio! 
 
@@ -24,12 +24,12 @@ To run this project locally, follow these steps:
 
 2. **Install dependencies:**
     ```bash
-    npm install
+    yarn install
     ```
 
 3. **Start the development server:**
     ```bash
-    npm run dev
+    yarn dev
     ```
 
 4. Open your browser and navigate to `http://localhost:3000` to view the project.
