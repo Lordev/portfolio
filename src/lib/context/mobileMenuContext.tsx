@@ -7,7 +7,7 @@ const mobileMenuContext = createContext<MobileMenuContextProps | undefined>(
 )
 
 interface MobileMenuContextProps {
-    menuOpen: boolean
+    isMenuOpen: boolean
     openMenu: () => void
     closeMenu: () => void
 }
@@ -17,7 +17,7 @@ export default function MobileMenuProvider({
 }: {
     children: React.ReactNode
 }) {
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [isMenuOpen, setMenuOpen] = useState(false)
 
     const closeMenu = () => {
         setMenuOpen(false)
@@ -28,7 +28,7 @@ export default function MobileMenuProvider({
     }
 
     return (
-        <mobileMenuContext.Provider value={{ menuOpen, closeMenu, openMenu }}>
+        <mobileMenuContext.Provider value={{ isMenuOpen, closeMenu, openMenu }}>
             {children}
         </mobileMenuContext.Provider>
     )

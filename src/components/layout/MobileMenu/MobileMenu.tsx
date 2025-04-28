@@ -7,11 +7,11 @@ import MobileMenuSocialLinks from './MobileMenuSocialLinks'
 import MobileMenuNavLinks from './MobileMenuNavLinks'
 
 export default function MobileMenu() {
-    const { menuOpen, closeMenu } = useMobileMenu()
+    const { isMenuOpen, closeMenu } = useMobileMenu()
     return (
         <Portal>
             <AnimatePresence>
-                {menuOpen && (
+                {isMenuOpen && (
                     <motion.div
                         initial="hidden"
                         animate="visible"
