@@ -1,6 +1,13 @@
-interface ProjectImage {
-    imageSrc: string
-    imageAlt: string
+export interface ProjectImage {
+    src: string
+    alt: string
+    width?: number
+    height?: number
+}
+
+export interface Link {
+    href: string
+    label: string
 }
 
 interface ProjectDescription {
@@ -10,17 +17,15 @@ interface ProjectDescription {
 
 export interface ProjectData {
     title: string
+    slug: string
     description: ProjectDescription
+    largeDescription?: string
     techStack: string[]
     image: ProjectImage
     link: string
     yearBuilt: string
-}
-
-
-export interface Link {
-    href: string
-    label: string
+    showcaseImages: ProjectImage[]
+    thumbnail: string
 }
 
 export type SocialLinks = {

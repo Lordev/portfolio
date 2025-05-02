@@ -15,8 +15,8 @@ export default function ProjectMockup({ project }: ProjectFrameProps) {
             <div className="relative w-full aspect-[1092/593]">
                 <Image
                     className="object-contain object-top"
-                    src={project.image.imageSrc}
-                    alt={project.image.imageAlt}
+                    src={project.image.src}
+                    alt={project.image.alt}
                     fill
                 />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
