@@ -7,7 +7,7 @@ interface BaseProps {
 
 type ButtonOrLinkProps =
     | (React.ButtonHTMLAttributes<HTMLButtonElement> & BaseProps)
-    | (LinkProps & BaseProps & { href: string });
+    | (LinkProps & BaseProps & { href: string, target?: string });
 
 
 export default function LinkLine(props: ButtonOrLinkProps) {
