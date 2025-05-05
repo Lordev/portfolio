@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import AboutImage from './AboutImage'
-import AboutBio from './AboutBio'
+import AboutImage from '@/content/home/about-section/components/AboutImage'
+import AboutBio from '@/content/home/about-section/components/AboutBio'
 import { moveRight } from '@/lib/utils/motion'
 
 
