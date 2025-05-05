@@ -1,11 +1,12 @@
 import { socialLinks } from '@/lib/data/links';
 import LinkLine from '@/components/ui/LinkLine';
+import { Heading } from '@/components/ui/Heading';
 
 export default function FooterBar() {
     return (
         <>
             <div className="col-span-5">
-                <h6 className="text-label-sm text-neutral-300 uppercase ">My socials</h6>
+                <Heading as='h6' size='section-label-sm'>My socials</Heading>
                 <div className="flex mt-10 gap-10 ">
                     <LinkLine
                         href={socialLinks.github.href}
@@ -23,7 +24,7 @@ export default function FooterBar() {
                 </div>
             </div>
             <div className="col-span-4 flex-col flex">
-                <h6 className="text-label-sm text-neutral-300 uppercase ">Get in touch</h6>
+            <Heading as='h6' size='section-label-sm'>Get in touch</Heading>
                 <div className="flex mt-10 gap-10">
                     <LinkLine
                         href={socialLinks.email.href}
@@ -33,10 +34,10 @@ export default function FooterBar() {
                 </div>
             </div>
             <div className="col-span-2 col-start-11 flex lg:justify-end text-end">
-                <h6 className="text-label-sm text-neutral-300 uppercase">
+            <Heading as='h6' size='section-label-sm'>
                     © {new Date().getFullYear()} Lorenzo Sallons.
                     <br />
-                </h6>
+                </Heading>
             </div>
         </>
     );
