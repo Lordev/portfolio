@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer';
 import NavBar from '@/components/layout/NavBar';
+import ProjectShowcase from '@/content/projects/showcase/ProjectShowcase';
 import ProjectSidebar from '@/content/projects/sidebar';
 import projectsData from '@/lib/data/projectsData';
 import SideBarProjectLinks from '@/content/projects/sidebar/components/SideBarProjectLinks';
@@ -38,6 +39,7 @@ export default async function Page({ params }: {   params: Promise<{ slug: strin
                 <NavBar navbarDisplay='sticky' />
                 <div className="row in-container max-lg:flex max-lg:flex-col lg:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-x-24">
                     <ProjectSidebar project={project} otherProjectsLinks={otherProjectsLinks} />
+                    <ProjectShowcase project={project} />
                     <div className="lg:hidden lg:py-120 py-80">
                         <SideBarProjectLinks otherProjectsLinks={otherProjectsLinks} />
                     </div>
