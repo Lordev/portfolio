@@ -8,7 +8,7 @@ import NavBar from '@/components/layout/NavBar';
 export default function Home() {
     return (
         <div className="relative">
-            <NavBar />
+            <NavBar navbarDisplay='absolute'/>
             <IntroAnimation />
             <Hero />
             <ProjectsSection />
