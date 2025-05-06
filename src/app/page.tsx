@@ -1,4 +1,3 @@
-import IntroAnimation from '@/components/layout/IntroAnimation'
 import Hero from "@/content/home/hero-section";
 import ProjectsSection from "@/content/home/projects-section";
 import AboutSection from "@/content/home/about-section";
@@ -9,7 +8,6 @@ export default function Home() {
     return (
         <div className="relative">
             <NavBar navbarDisplay='absolute'/>
-            <IntroAnimation />
             <Hero />
             <ProjectsSection />
             <AboutSection />
