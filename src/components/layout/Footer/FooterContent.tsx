@@ -10,7 +10,7 @@ interface FooterContentProps {
 export default function FooterContent({ scrollYProgress }: FooterContentProps) {
     const y = useTransform(scrollYProgress, [0, 1], ['-30%', '30%'])
     const [height, setHeight] = useState<number | null>(null)
-    const [mobile, setMobile] = useState<boolean>(false)
+
 
     const container = useRef<HTMLDivElement>(null)
 
@@ -19,8 +19,6 @@ export default function FooterContent({ scrollYProgress }: FooterContentProps) {
             const handleResize = () => {
                 setHeight(container.current?.getBoundingClientRect().height ?? 0)
             }
-            const isMobile = window.innerWidth < 768
-            setMobile(isMobile)
             handleResize()
 
             window.addEventListener('resize', handleResize)
@@ -46,8 +44,7 @@ export default function FooterContent({ scrollYProgress }: FooterContentProps) {
                 <div
                     className="text-display font-display uppercase text-primary-500  gap-24 lg:grid-cols-12 lg:grid row in-container max-lg:flex max-lg:flex-col max-lg:mb-120"
                     style={{
-                        marginTop: !mobile ? `${height}px` :'0px',
-                        marginBottom: mobile ? `${height}px` : '0px',
+                        marginBottom: `${height}px`,
                     }}
                 >
                     <div className="col-start-4">Ideas?</div>
@@ -60,7 +57,7 @@ export default function FooterContent({ scrollYProgress }: FooterContentProps) {
                 </div>
             </div>
             <div
-                className="row in-container lg:grid lg:grid-cols-12   border-t-1 border-gray-300 bg-blend-hue bg-white/2 backdrop-blur-sm max-lg:flex max-lg:flex-col max-lg:gap-24 py-24  absolute lg:top-0 max-lg:bottom-0"
+                className="row in-container lg:grid lg:grid-cols-12   border-t-1 border-gray-300 bg-blend-hue bg-white/2 backdrop-blur-sm max-lg:flex max-lg:flex-col max-lg:gap-24 py-24  absolute bottom-0"
                 ref={container}
             >
                 <FooterBar />
