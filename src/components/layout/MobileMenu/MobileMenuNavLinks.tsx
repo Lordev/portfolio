@@ -1,14 +1,17 @@
+'use client';
 import { mobileNavLinks } from '@/lib/data/links'
 import { motion } from 'framer-motion'
 import { revealText } from '@/lib/utils/motion'
 import LinkLine from '@/components/ui/LinkLine'
 import { useMobileMenu } from '@/lib/context/mobileMenuContext'
-import { useSmoothScroll } from '@/lib/context/SmoothScrollContext'
+import { scrollToElement } from '@/lib/utils/scrollToElement';
+import { useLenis } from 'lenis/react'
+
 
 
 export default function MobileMenuNavLinks() {
+    const lenis = useLenis();
     const { closeMenu } = useMobileMenu()
-    const { setTargetSection } = useSmoothScroll()
 
     return (
         <>
@@ -16,15 +19,13 @@ export default function MobileMenuNavLinks() {
                 {mobileNavLinks.map((link) => (
                     <motion.div
                         key={link.label}
-                        onClick={closeMenu}
                         variants={revealText}
+                        onClick={closeMenu}
                     >
                         <LinkLine
                             label={link.label}
-                            size="lg"
-                            onClick={() => {
-                                setTargetSection(link.href)
-                            }}
+                            size='lg'
+                            onClick={() => lenis && scrollToElement(lenis, link.href)}
                         />
                     </motion.div>
                 ))}

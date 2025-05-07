@@ -1,12 +1,11 @@
-'use client'
-import { heroNavLinks } from '@/lib/data/links'
-import LinkLine from '@/components/ui/LinkLine'
-import { useSmoothScroll } from '@/lib/context/SmoothScrollContext'
-
+'use client';
+import { heroNavLinks } from '@/lib/data/links';
+import LinkLine from '@/components/ui/LinkLine';
+import { useLenis } from 'lenis/react';
+import { scrollToElement } from '@/lib/utils/scrollToElement';
 
 export default function HeroNav() {
-    const { setTargetSection } = useSmoothScroll()
-
+    const lenis = useLenis();
     return (
         <div className="justify-center flex flex-col h-full">
             <nav className="border-l-1 border-neutral-500 flex flex-col gap-24 pl-24 py-24">
@@ -14,12 +13,10 @@ export default function HeroNav() {
                     <LinkLine
                         label={link.label}
                         key={link.label}
-                        onClick={() => {
-                            setTargetSection(link.href)
-                        }}
+                        onClick={() => lenis && scrollToElement(lenis, link.href)}
                     />
                 ))}
             </nav>
         </div>
-    )
+    );
 }
