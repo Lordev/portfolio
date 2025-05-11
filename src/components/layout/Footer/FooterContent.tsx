@@ -42,7 +42,7 @@ export default function FooterContent({ scrollYProgress }: FooterContentProps) {
             />
             <div className="flex flex-col justify-center h-full">
                 <div
-                    className="text-display font-display uppercase text-primary-500  gap-24 lg:grid-cols-12 lg:grid row in-container max-lg:flex max-lg:flex-col max-lg:mb-120"
+                    className="text-display font-display uppercase text-primary-500  gap-y-16 gap-x-24 lg:grid-cols-12 lg:grid row in-container max-lg:flex max-lg:flex-col max-lg:mb-120"
                     style={{
                         marginBottom: `${height}px`,
                     }}
