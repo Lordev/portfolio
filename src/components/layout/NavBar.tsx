@@ -3,6 +3,7 @@ import MobileMenu from './MobileMenu/MobileMenu';
 import Link from 'next/link';
 import { useMobileMenu } from '@/lib/context/mobileMenuContext';
 import { usePathname } from 'next/navigation';
+import WorkStatus from '@/components/ui/WorkStatus';
 
 interface NavBarProps {
     navbarDisplay?: 'absolute' | 'sticky';
@@ -50,8 +51,7 @@ export default function NavBar({ navbarDisplay }: NavBarProps) {
                         status
                     </p>
                     <div className="flex gap-16 items-center">
-                        <span className="text-body-md">Open for work</span>
-                        <span className="w-8 h-8 bg-green-400 rounded-full animate-pulse"></span>
+                        <WorkStatus />
                     </div>
                 </div>
             </div>
