@@ -26,7 +26,7 @@ export default function AboutBio() {
                             variants={revealText}
                             viewport={{ once: true }}
                         >
-                            Rotterdam-based frontend developer turning static websites into dynamic
+                            Rotterdam-based fullstack developer turning static websites into dynamic
                             experiences. Skilled in modern web tech with a passion for thoughtful
                             animation. Beyond code, I like to create music and explore different
                             aspects of design.
@@ -73,10 +73,11 @@ export default function AboutBio() {
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>PHP</span>
-                            <span>THREE.JS</span>
+                            <span>SQL</span>
                         </div>
                         <div className="flex flex-col gap-8">
-                            <span>WORDPRESS</span>
+                            <span>PYTHON</span>
+                            <span>LARAVEL</span>
                             <span>FIGMA</span>
                         </div>
                     </motion.div>

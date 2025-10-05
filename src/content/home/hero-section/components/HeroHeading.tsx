@@ -80,7 +80,7 @@ export default function HeroHeading() {
                     animate="show"
                 >
                     <motion.div variants={tagLineTextLeft} className="max-xs:text-sm">
-                        Frontend <span className="font-normal">developer</span>
+                        Fullstack <span className="font-normal">developer</span>
                     </motion.div>
                     <motion.div
                         variants={tagLineTextRight}
