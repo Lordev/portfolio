@@ -1,4 +1,4 @@
-import { easeIn } from 'framer-motion'
+import { easeIn, easeInOut } from 'framer-motion'
 
 export const menuReveal = {
     hidden: {
@@ -10,7 +10,7 @@ export const menuReveal = {
         y: 0,
         transition: {
             duration: 0.3,
-            ease: 'easeInOut',
+            ease: easeInOut,
             staggerChildren: 0.2,
         },
     },
@@ -20,7 +20,7 @@ export const menuReveal = {
         transition: {
             delay: 0.6,
             duration: 0.2,
-            ease: 'easeInOut',
+            ease: easeInOut,
             staggerChildren: 0.1,
         },
     },

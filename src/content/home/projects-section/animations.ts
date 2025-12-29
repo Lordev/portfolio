@@ -1,3 +1,5 @@
+import { easeInOut } from 'framer-motion';
+
 export const smoothConfig = {
     type: 'spring',
     stiffness: 100,
@@ -10,7 +12,7 @@ export const parentVariants = {
     visible: {
         transition: {
             duration: 0.3,
-            ease: 'easeInOut',
+            ease: easeInOut,
             staggerChildren: 0.02,
         },
     },
@@ -21,6 +23,6 @@ export const childVariants = {
     visible: {
         y: 0,
         opacity: 1,
-        transition: { duration: 0.4, ease: 'easeInOut' },
+        transition: { duration: 0.4, ease: easeInOut },
     },
 };

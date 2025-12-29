@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 
 export default function HeroHeading() {
     const revealHeadline = {
@@ -18,7 +18,7 @@ export default function HeroHeading() {
             y: 0,
             transition: {
                 duration: 0.7,
-                ease: 'easeOut',
+                ease: easeOut,
             },
         },
     };
@@ -41,7 +41,7 @@ export default function HeroHeading() {
             x: 0,
             transition: {
                 duration: 0.7,
-                ease: 'easeOut',
+                ease: easeOut,
             },
         },
     };
@@ -53,7 +53,7 @@ export default function HeroHeading() {
             x: 0,
             transition: {
                 duration: 0.7,
-                ease: 'easeOut',
+                ease: easeOut,
             },
         },
     };
