@@ -1,32 +1,36 @@
-import { motion } from 'framer-motion'
-import AboutImage from '@/content/home/about-section/components/AboutImage'
-import AboutBio from '@/content/home/about-section/components/AboutBio'
-import { moveRight } from '@/lib/utils/motion'
+'use client';
+import { useRef } from 'react';
+import { useScroll, useTransform } from 'framer-motion';
+import AboutCardsScroller from './components/AboutCardsScroller';
+import { aboutCards } from './data';
 
-
+// Extra scroll space after the last card exits — keeps the section sticky
+// while the footer slides over the empty about section.
+const GAP_VH = 120;
+const CARD_VH = aboutCards.length * 100;
+const TOTAL_VH = CARD_VH + GAP_VH;
 
 export default function AboutContent() {
-    
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ['start start', 'end end'],
+    });
+
+    // Remap so cards animate over just the first portion; the gap is "free" scroll.
+    const cardRatio = CARD_VH / TOTAL_VH;
+    const cardProgress = useTransform(scrollYProgress, [0, cardRatio], [0, 1], { clamp: true });
 
     return (
         <div
-            className="relative row in-container bg-background  lg:min-h-1080 content-center gap-24 border-t-1 border-b-1 border-neutral-800 grid lg:grid-cols-2 py-172 lg:py-240 min-h-screen "
+            ref={containerRef}
+            className="row in-container bg-background"
+            style={{ height: `${TOTAL_VH}vh` }}
         >
-                <motion.div
-                    className="absolute bottom-0 aspect-[654/838] max-lg:-left-140 h-4/5 "
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={moveRight}
-                    viewport={{ once: true, amount: 0.1 }}	    
-                >
-                    <AboutImage />
-                </motion.div>
-
-            <motion.div
-                className="w-2/10 aspect-[447/774] right-0 absolute max-lg:hidden"
-            >
-            </motion.div>
-            <AboutBio />
+            <div className="sticky top-0 h-screen">
+                <AboutCardsScroller scrollYProgress={cardProgress} />
+            </div>
         </div>
-    )
+    );
 }
