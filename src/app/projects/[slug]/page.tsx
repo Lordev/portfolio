@@ -35,7 +35,7 @@ export default async function Page({ params }: {   params: Promise<{ slug: strin
 
     return (
         <>
-            <div className="relative z-10 bg-background border-b border-neutral-800 lg:pb-120" id="page">
+            <div className="relative z-10 bg-background  border-neutral-800 lg:pb-120" id="page">
                 <NavBar navbarDisplay='sticky' />
                 <div className="row in-container max-lg:flex max-lg:flex-col lg:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-x-24">
                     <ProjectSidebar project={project} otherProjectsLinks={otherProjectsLinks} />

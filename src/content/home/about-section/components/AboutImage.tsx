@@ -2,10 +2,7 @@ import Image from 'next/image';
 
 export default function AboutImage() {
     return (
-        <div
-            className="relative h-full w-full overflow-hidden top-0 opacity-70"
-            style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)' }}
-        >
+        <div className="relative h-full w-full overflow-hidden top-0 opacity-100 z-3">
             <Image
                 src="/about/img-headshot.png"
                 alt=""

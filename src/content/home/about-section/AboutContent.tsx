@@ -25,7 +25,7 @@ export default function AboutContent() {
     return (
         <div
             ref={containerRef}
-            className="row in-container bg-background"
+            className="bg-background"
             style={{ height: `${TOTAL_VH}vh` }}
         >
             <div className="sticky top-0 h-screen">

@@ -11,7 +11,7 @@ type ButtonOrLinkProps =
 
 
 export default function LinkLine(props: ButtonOrLinkProps) {
-    const { label, size = 'md' } = props as BaseProps
+    const { label, size = 'sm' } = props as BaseProps
     const sizeClasses = {
         lg: 'text-title-lg lg:text-title-xl',
         md: 'text-title-sm md:text-title-md lg:text-title-lg',
