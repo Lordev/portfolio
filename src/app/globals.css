@@ -67,6 +67,11 @@
     /* 16px */
     --text-title-sm: calc(0.8333 * var(--vw) * var(--fontSizeMultiplier-title));
 
+    /* 280x */
+    --text-display-md: calc(
+        14.5833 * var(--vw) * var(--fontSizeMultiplier-display)
+    );
+
     /* 364px */
     --text-display: calc(
         18.9583 * var(--vw) * var(--fontSizeMultiplier-display)
@@ -262,6 +267,10 @@
     --text-heading-sm--line-height: 1.2em;
 
     /* display */
+    --text-display-md: var(--text-display-md);
+    --text-display-md--letter-spacing: -0.01em;
+    --text-display-md--line-height: 0.735em;
+
     --text-display: var(--text-display);
     --text-display--letter-spacing: -0.01em;
     --text-display--line-height: 0.735em;

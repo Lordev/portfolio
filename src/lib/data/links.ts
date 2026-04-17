@@ -4,12 +4,14 @@ export const mobileNavLinks: Link[] = [
     { label: 'Home', href: '#Home' },
     { label: 'Projects', href: '#Projects' },
     { label: 'About', href: '#About' },
+    { label: 'Skills', href: '#Skills' },
     { label: 'Contact', href: '#Contact' },
 ];
 
 export const heroNavLinks: Link[] = [
     { label: 'Projects', href: '#Projects' },
     { label: 'About', href: '#About' },
+    { label: 'Skills', href: '#Skills' },
     { label: 'Contact', href: '#Contact' },
 ];
 
@@ -23,7 +25,7 @@ export const socialLinks: SocialLinks = {
         href: 'https://www.linkedin.com/in/lorenzo-sallons-383945176',
     },
     email: {
-        label: 'lorenzo.sallons.dev@gmail.com',
-        href: 'mailto:lordev@gmail.com',
+        label: 'info@lordev.me',
+        href: 'mailto:info@lordev.me',
     },
 };

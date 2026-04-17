@@ -16,7 +16,7 @@ const headingVariants = cva('', {
             'heading-lg': 'text-heading-md lg:text-heading-lg',
             'display-sm': 'text-display-sm',
             'display-md': 'text-display-md',
-            'display-lg': 'text-display-lg',
+            'display-lg': 'text-display',
         },
         transform: {
             uppercase: 'uppercase',
