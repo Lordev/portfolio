@@ -19,7 +19,7 @@ export default function FooterBackground() {
     const x = useTransform(smoothX, [0, 1], ['-70%', '-30%']);
 
     return (
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-black overflow-hidden">
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-black overflow-hidden -z-10">
             <motion.div
                 className="absolute bottom-0 h-full"
                 style={{

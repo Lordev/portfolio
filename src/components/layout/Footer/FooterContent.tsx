@@ -14,7 +14,7 @@ export default function FooterContent() {
             // style={{ y }}
         >
             <FooterBackground />
-            <div className="absolute bottom-0 w-full mb-12">
+            <div className="lg:absolute lg:bottom-0 w-full mb-12">
                 <div
                     className=""
                     ref={container}
