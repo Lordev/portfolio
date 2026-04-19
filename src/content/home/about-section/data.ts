@@ -1,8 +1,8 @@
 export const cardMotionVariants = [
-    { entryX: '-12%', entrySkewX:  4, exitX: '-10%', exitSkewX: -3 }, // left
-    { entryX:  '12%', entrySkewX: -4, exitX:  '10%', exitSkewX:  3 }, // right
-    { entryX: '-12%', entrySkewX:  4, exitX: '-10%', exitSkewX: -3 }, // left
-    { entryX:  '12%', entrySkewX: -4, exitX:  '10%', exitSkewX:  3 }, // right
+    { entryX: '0%', entrySkewY: -4, exitX: '0%', exitSkewY: 3 },
+    { entryX: '0%', entrySkewY:  4, exitX: '0%', exitSkewY: -3 },
+    { entryX: '0%', entrySkewY: -4, exitX: '0%', exitSkewY: 3 },
+    { entryX: '0%', entrySkewY:  4, exitX: '0%', exitSkewY: -3 },
 ];
 
 export const aboutCards = [
@@ -11,28 +11,28 @@ export const aboutCards = [
         label: '[who i am]',
         title: 'Considered by default',
         description:
-            'Rotterdam-based fullstack developer focused on digital experiences that feel considered from both sides of the screen. I care about structure, motion, and clarity in equal measure.',
+            'Rotterdam-based developer working across the full stack. I am drawn to work that sits at the edge of interface and engineering, where the technical decisions are just as considered as the visual ones.',
     },
     {
         index: '02',
-        label: '[my philosophy]',
-        title: 'Strong point of view',
+        label: '[what i build]',
+        title: 'Full stack, for real',
         description:
-            'I like work that has a strong point of view without getting in its own way. The goal is not novelty for its own sake, but interfaces that feel sharp, usable, and memorable long after the first scroll.',
+            'Production applications in React, Next.js, and TypeScript on the front, Node.js, Laravel, and PostgreSQL on the back. Increasingly building with AI: agentic workflows, LLM integration, and API-driven intelligence layered into real products.',
     },
     {
         index: '03',
-        label: '[outside of work]',
-        title: 'Reference collector',
-        description:
-            'Away from the screen, I spend time making music and collecting visual references from architecture, typography, and editorial design. That cross-pollination tends to show up in the details.',
-    },
-    {
-        index: '04',
         label: '[how i work]',
         title: 'End to end',
         description:
-            'I work across the full stack — from data models to micro-interactions. That range means fewer handoff gaps and more ownership over the final result. The seams tend not to show.',
+            'End-to-end and self-directed. I take products from architecture to deployment without losing the thread between layers. The kind of work where nothing gets handed off because nothing needs to be.',
+    },
+    {
+        index: '04',
+        label: '[outside of work]',
+        title: 'More than the screen',
+        description:
+            'I make music and have a broad interest in creative disciplines. That side does not conflict with the engineering, it tends to sharpen it. Good interfaces are built on the same instincts as good composition.',
     },
 ];
 

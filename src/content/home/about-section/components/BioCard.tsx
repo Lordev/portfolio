@@ -40,31 +40,27 @@ export default function BioCard({
         [segmentStart, midpoint, segmentEnd],
         [0.96, 1.1, 0.98]
     );
-    const skewX = useTransform(
+    const skewY = useTransform(
         scrollYProgress,
         [segmentStart, midpoint, segmentEnd],
-        [variant.entrySkewX, 0, variant.exitSkewX]
+        [variant.entrySkewY, 0, variant.exitSkewY]
     );
-
-    const isRight = index % 2 === 1;
 
     return (
         <motion.article
-            className={`absolute flex w-full max-lg:inset-x-0 max-lg:px-24 lg:w-[44%] ${
-                isRight
-                    ? 'lg:right-0 lg:justify-end lg:pr-64'
-                    : 'lg:left-0 lg:justify-start lg:pl-64'
-            }`}
-            style={{ y, x, opacity, scale, skewX }}
+            className={`absolute w-full px-24 lg:px-0 lg:w-[420px] ${
+                index % 2 === 0 ? 'lg:left-[10%]' : 'lg:right-[10%]'
+            } max-lg:left-1/2 max-lg:-translate-x-1/2`}
+            style={{ y, x, opacity, scale, skewY }}
         >
-            <div className="relative w-full overflow-hidden border border-neutral-700/70 bg-neutral-950/90 p-28 backdrop-blur-md shadow-[0_24px_80px_rgba(0,0,0,0.38)] lg:p-36">
-                <span className="pointer-events-none absolute -bottom-8 right-8 select-none font-display text-display leading-none text-neutral-100/2">
+            <div className="relative w-full overflow-hidden border border-neutral-700/70 bg-neutral-950/50 p-28 backdrop-blur-md shadow-[0_24px_80px_rgba(0,0,0,0.38)] lg:p-36">
+                <span className="pointer-events-none absolute -bottom-8 right-8 select-none font-display text-display-lg leading-none text-neutral-100/2">
                     {card.index}
                 </span>
                 <div className="mb-20 flex items-center justify-between gap-16">
-                    <span className="font-label text-label-sm ">{card.label}</span>
+                    <span className="font-label text-label-sm text-neutral-300">{card.label}</span>
                 </div>
-                <div className="mb-16 h-px bg-primary-400/40" />
+                <div className="mb-16 h-px bg-primary-500" />
                 <Heading as="h3" size="title-md" transform="normal" className="mb-16 text-neutral-50">
                     {card.title}
                 </Heading>
