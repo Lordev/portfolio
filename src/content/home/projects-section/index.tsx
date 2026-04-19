@@ -13,7 +13,7 @@ export default function ProjectsSection() {
     return (
         <>
             <motion.section
-                className="gap-24 relative pt-180 border-t-1 border-t-neutral-800 row in-container bg-background"
+                className="gap-24 relative pt-180 row in-container bg-background"
                 id="Projects"
             >
                 <ScrollContainer

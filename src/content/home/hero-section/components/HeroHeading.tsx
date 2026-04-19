@@ -1,4 +1,5 @@
 import { motion, easeOut } from 'framer-motion';
+import HeroAutograph from './HeroAutograph';
 
 export default function HeroHeading() {
     const revealHeadline = {
@@ -60,21 +61,21 @@ export default function HeroHeading() {
 
     return (
         <motion.div
-            className="text-display font-display uppercase text-primary-500 flex flex-col gap-16 xs:items-end z-50 col-span-6 col-start-4 lg:-mr-8 mt-[var(--header-height)] mb-128 max-lg:px-[var(--padding-container)]"
+            className="text-display-md font-display uppercase text-primary-500 flex flex-col gap-24 xs:items-end z-50 col-span-6 col-start-4 lg:-mr-8 max-lg:px-[var(--padding-container)]"
             initial="hidden"
             animate="show"
             variants={revealHeadline}
         >
-            <motion.div variants={headlineText} className="lg:mr-32">
+            <motion.div variants={headlineText} className="lg:mr-156">
                 Create.
             </motion.div>
-            <div className="max-lg:self-start flex items-end justify-between xl:pr-132 gap-30 xl:gap-60 2xl:pr-220 lg:pr-78 lg:gap-40">
-                <motion.div variants={headlineText} className="">
+            <div className="max-lg:self-start flex items-end justify-between gap-30 xl:gap-60 lg:gap-40 w-full">
+                <motion.div variants={headlineText} className="self-start">
                     Code.
                 </motion.div>
 
                 <motion.h1
-                    className="text-body-md font-main text-neutral-100 uppercase z-30 text-nowrap max-xs:absolute max-xs:bottom-152"
+                    className="text-body-md font-main text-neutral-100 uppercase z-30 text-nowrap max-xs:absolute max-xs:bottom-152 mr-90"
                     variants={revealTagLine}
                     initial="hidden"
                     animate="show"
@@ -84,15 +85,16 @@ export default function HeroHeading() {
                     </motion.div>
                     <motion.div
                         variants={tagLineTextRight}
-                        className="ml-58 max-xs:ml-32 max-xs:text-sm"
+                        className="ml-58 max-xs:ml-32 max-xs:text-sm" 
                     >
                         creating <span className="font-normal">digital art</span>{' '}
                     </motion.div>
                 </motion.h1>
             </div>
-            <motion.div variants={headlineText} className="lg:mr-2">
+            <motion.div variants={headlineText} className="lg:mr-106">
                 Deliver.
             </motion.div>
+            <HeroAutograph />
         </motion.div>
     );
 }

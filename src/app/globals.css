@@ -67,13 +67,18 @@
     /* 16px */
     --text-title-sm: calc(0.8333 * var(--vw) * var(--fontSizeMultiplier-title));
 
-    /* 280x */
+    /* 240px */
+    --text-display-sm: calc(
+        12.5000 * var(--vw) * var(--fontSizeMultiplier-display)
+    );
+
+    /* 280px */
     --text-display-md: calc(
         14.5833 * var(--vw) * var(--fontSizeMultiplier-display)
     );
 
     /* 364px */
-    --text-display: calc(
+    --text-display-lg: calc(
         18.9583 * var(--vw) * var(--fontSizeMultiplier-display)
     );
 
@@ -267,13 +272,17 @@
     --text-heading-sm--line-height: 1.2em;
 
     /* display */
+    --text-display-sm: var(--text-display-sm);
+    --text-display-sm--letter-spacing: -0.01em; 
+    --text-display-sm--line-height: 0.725em;
+
     --text-display-md: var(--text-display-md);
     --text-display-md--letter-spacing: -0.01em;
     --text-display-md--line-height: 0.735em;
 
-    --text-display: var(--text-display);
-    --text-display--letter-spacing: -0.01em;
-    --text-display--line-height: 0.735em;
+    --text-display-lg: var(--text-display-lg);
+    --text-display-lg--letter-spacing: -0.01em;
+    --text-display-lg--line-height: 0.735em;
 
     --breakpoint-2xs: 23.5rem; /* 376px */
     --breakpoint-xs: 36rem; /* 576px */

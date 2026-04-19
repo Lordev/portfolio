@@ -11,7 +11,7 @@ export default function Hero() {
             <ScrollContainer
                 containerRef={containerRef}
                 offset={['start start', 'end start']}
-                className="lg:px-[var(--padding-container)]  overflow-hidden gap-24"
+                className=" overflow-hidden gap-24"
             >
                 {(scrollYProgress) => (
                     <>

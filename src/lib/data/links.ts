@@ -11,7 +11,6 @@ export const mobileNavLinks: Link[] = [
 export const heroNavLinks: Link[] = [
     { label: 'Projects', href: '#Projects' },
     { label: 'About', href: '#About' },
-    { label: 'Skills', href: '#Skills' },
     { label: 'Contact', href: '#Contact' },
 ];
 

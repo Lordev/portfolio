@@ -56,14 +56,11 @@ export default function ProjectsContent({ data, scrollYProgress }: ProjectsProps
 
     return (
         <>
-            <VerticalLine LinePosition={LinePosition.Top} />
             <StickyBar motionStyle={barAnimations}/>
-            <ScrollDownLabel />
             <HeadingSection data={data} motionStyle={headingAnimations} />
             <ProjectMockups data={data} motionStyle={mockupAnimations} />
             <div className="sticky bottom-0 -z-10 w-full h-full" />
             <ProjectDetails project={currentProject} motionStyle={hideOnscroll} />
-            <VerticalLine LinePosition={LinePosition.Bottom} /> 
         </>
     );
 }
