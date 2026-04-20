@@ -10,24 +10,38 @@ export const LenisProvider = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const lenisRef = useRef<LenisRef | null>(null);
+    const prevPathname = useRef('');
 
     useEffect(() => {
         if (!lenis) {
             return;
         }
 
-        // Frame update for Lenis raf
         function update(data: { timestamp: number }) {
-            const time = data.timestamp;
-            lenisRef.current?.lenis?.raf(time);
+            lenisRef.current?.lenis?.raf(data.timestamp);
         }
 
         frame.update(update, true);
 
-        // Workaround for Lenis scrolling to the top on route change
-        lenis.stop();
-        lenis.start();
-        lenis.scrollTo(0, { immediate: true });
+        if (prevPathname.current !== pathname) {
+            prevPathname.current = pathname;
+            lenis.stop();
+            lenis.start();
+
+            const hash = window.location.hash;
+            if (hash) {
+                history.replaceState(null, '', pathname);
+                lenis.scrollTo(0, { immediate: true });
+                setTimeout(() => {
+                    const target = document.querySelector(hash);
+                    if (target instanceof HTMLElement) {
+                        lenis.scrollTo(target, { duration: 1.8 });
+                    }
+                }, 300);
+            } else {
+                lenis.scrollTo(0, { immediate: true });
+            }
+        }
 
         return () => cancelFrame(update);
     }, [pathname, searchParams, lenis]);
@@ -40,7 +54,7 @@ export const LenisProvider = ({ children }: { children: ReactNode }) => {
                 orientation: 'vertical',
                 gestureOrientation: 'vertical',
                 touchMultiplier: 2,
-                anchors: true,
+                anchors: false,
                 lerp: 0.1,
                 autoRaf: false,
             }}

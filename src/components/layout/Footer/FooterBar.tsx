@@ -1,8 +1,23 @@
+'use client';
 import { heroNavLinks, socialLinks } from '@/lib/data/links';
 import LinkLine from '@/components/ui/LinkLine';
 import { Heading } from '@/components/ui/Heading';
+import { useLenis } from 'lenis/react';
+import { useIsHomePage } from '@/lib/hooks/useIsHomePage';
 
 export default function FooterBar() {
+    const lenis = useLenis();
+    const isHomePage = useIsHomePage();
+
+    const handleNavClick = (e: React.MouseEvent, href: string) => {
+        if (isHomePage && lenis) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target instanceof HTMLElement) {
+                lenis.scrollTo(target, { duration: 1.8 });
+            }
+        }
+    };
     return (
         <>
             {/* Desktop */}
@@ -30,7 +45,12 @@ export default function FooterBar() {
                         <Heading as='h6' size='section-label-sm'>Navigate</Heading>
                         <div className="flex flex-col gap-12 mt-24">
                             {heroNavLinks.map(link => (
-                                <LinkLine key={link.href} href={link.href} label={link.label} />
+                                <LinkLine
+                                    key={link.href}
+                                    href={isHomePage ? link.href : `/${link.href}`}
+                                    label={link.label}
+                                    onClick={(e: React.MouseEvent) => handleNavClick(e, link.href)}
+                                />
                             ))}
                         </div>
                     </div>
@@ -58,7 +78,12 @@ export default function FooterBar() {
                         <Heading as='h6' size='section-label-sm'>Navigate</Heading>
                         <div className="flex flex-col gap-12 mt-24">
                             {heroNavLinks.map(link => (
-                                <LinkLine key={link.href} href={link.href} label={link.label} />
+                                <LinkLine
+                                    key={link.href}
+                                    href={isHomePage ? link.href : `/${link.href}`}
+                                    label={link.label}
+                                    onClick={(e: React.MouseEvent) => handleNavClick(e, link.href)}
+                                />
                             ))}
                         </div>
                     </div>
