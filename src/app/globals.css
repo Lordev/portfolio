@@ -231,6 +231,9 @@
     --text-body-md--font-weight: 200;
 
     --text-body-lg: var(--text-body-lg);
+    --text-body-lg--line-height: 1.1em;
+    --text-body-lg--letter-spacing: 0.015em;
+    --text-body-lg--font-weight: 200;
 
     /* label */
     --text-label-sm: var(--text-label-sm);
