@@ -1,24 +1,30 @@
 'use client'
-import { useTransform, MotionValue, easeIn } from 'framer-motion'
 import HeroBackground from './components/HeroBackground'
 import HeroHeading from './components/HeroHeading'
 import HeroTime from './components/HeroTime'
 import HeroAvailability from './components/HeroAvailability'
+import { useIsMobile } from '@/lib/hooks/useIsMobile'
 
-interface HeroContentProps {
-    scrollYProgress: MotionValue<number>
-}
+export default function HeroContent() {
+    const isMobile = useIsMobile()
 
-export default function HeroContent({
-    scrollYProgress,
-}: HeroContentProps) {
-    const yTransform = useTransform(scrollYProgress, [0, 1], ['0%', '50%'], {
-        clamp: false,
-        ease: easeIn,
-    })
+    if (isMobile) {
+        return (
+            <div className="relative flex flex-col justify-between w-full min-h-652 h-screen max-h-1080 2xs:h-932 xs:h-956 md:h-1000">
+                <HeroBackground />
+                <div className="flex-1 flex items-center">
+                    <HeroHeading />
+                </div>
+                <div className="flex justify-between items-end z-10 relative">
+                    <HeroAvailability mobile />
+                    <HeroTime mobile />
+                </div>
+            </div>
+        )
+    }
 
     return (
-        <div className="relative 2xl:h-screen lg:grid lg:grid-cols-12 gap-x-24 lg:h-852 2xl:max-h-1080 w-full md:h-1000 xs:h-956 2xs:h-932 h-732">
+        <div className="relative 2xl:h-screen lg:grid lg:grid-cols-12 gap-x-24 lg:h-852 2xl:max-h-1080 w-full">
             <HeroBackground />
             <HeroTime />
             <HeroAvailability />

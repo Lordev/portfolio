@@ -11,11 +11,11 @@ export default function Hero() {
             <ScrollContainer
                 containerRef={containerRef}
                 offset={['start start', 'end start']}
-                className=" overflow-hidden gap-24"
+                className=" overflow-hidden gap-24 "
             >
-                {(scrollYProgress) => (
+                {() => (
                     <>
-                        <HeroContent scrollYProgress={scrollYProgress} />
+                        <HeroContent />
                     </>
                 )}
             </ScrollContainer>
