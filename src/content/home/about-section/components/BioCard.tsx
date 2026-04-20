@@ -48,7 +48,7 @@ export default function BioCard({
 
     return (
         <motion.article
-            className={`absolute w-full px-24 lg:px-0 lg:w-[420px] ${
+            className={`absolute w-9/10 px-24 lg:px-0 lg:w-420 ${
                 index % 2 === 0 ? 'lg:left-[10%]' : 'lg:right-[10%]'
             } max-lg:left-1/2 max-lg:-translate-x-1/2`}
             style={{ y, x, opacity, scale, skewY }}
