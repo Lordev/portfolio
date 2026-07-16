@@ -1,12 +1,35 @@
 import { ProjectData } from '@/lib/types';
-import { radiantFestivalImages, sp01Images, strategySphereImages, tradeTribeImages } from '@/lib/data/projectImages';
+import { radiantFestivalImages, sounceryImages, sp01Images, strategySphereImages, tradeTribeImages } from '@/lib/data/projectImages';
 
 const projectsData: ProjectData[] = [
+    {
+        title: 'Souncery',
+        slug: 'souncery',
+        description: {
+            tagline: 'AI-powered reference-based mix analysis',
+            highlights: [
+                'AI-generated mix feedback against reference tracks',
+                'Version tracking for mix iterations',
+                'Stripe-powered subscription billing',
+            ],
+        },
+        techStack: ['Next.js', 'Laravel', 'Python', 'Tailwind CSS', 'Stripe'],
+        image: {
+            src: '/projects/souncery-frame.png',
+            alt: 'Souncery',
+        },
+        link: 'https://www.souncery.com/',
+        yearBuilt: '2026',
+        largeDescription:
+            'Souncery is an AI-powered mix analysis platform that compares a musician\'s mix against a reference track, evaluating loudness, dynamics, tonal balance, and stereo characteristics. A Next.js frontend talks to a Laravel API for auth and billing, while a dedicated Python service handles the audio analysis and AI-generated feedback, with Stripe powering subscriptions across free and premium tiers.',
+        showcaseImages: sounceryImages,
+        thumbnail: '/projects-showcase/souncery-thumbnail.jpg',
+    },
     {
         title: 'StrategySphere Advisors',
         slug: 'strategysphere-advisors',
         description: {
-            summary: 'Business website',
+            tagline: 'Business website',
             highlights: [
                 "Dynamic blog integrated with Sanity.io's server-side filtering",
                 'Scalable architecture for easy adaptations ',
@@ -29,7 +52,7 @@ const projectsData: ProjectData[] = [
         title: 'Trade Tribe',
         slug: 'trade-tribe',
         description: {
-            summary: 'A Hiking boots custom e-commerce website',
+            tagline: 'A Hiking boots custom e-commerce website',
             highlights: [
                 'WooCommerce integration',
                 'Fully Dynamic Content',
@@ -52,7 +75,7 @@ const projectsData: ProjectData[] = [
         title: 'Radiant festival',
         slug: 'radiant-festival',
         description: {
-            summary: 'A festival themed website',
+            tagline: 'A festival themed website',
             highlights: [
                 'Payment integration with Stripe API',
                 'Framer Motion animations',
@@ -75,7 +98,7 @@ const projectsData: ProjectData[] = [
         title: 'SP_01',
         slug: 'sp-01',
         description: {
-            summary: 'Three.js website',
+            tagline: 'Three.js website',
             highlights: [
                 'Headset 3D model with interactive features',
                 'Fully responsive design',

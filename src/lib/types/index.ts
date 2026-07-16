@@ -11,7 +11,7 @@ export interface Link {
 }
 
 interface ProjectDescription {
-    summary: string
+    tagline: string
     highlights: string[]
 }
 

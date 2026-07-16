@@ -30,7 +30,7 @@ export default function ProjectDetails({ project, motionStyle }: ProjectDetailsP
                     </Heading>
                 </motion.div>
                 <motion.p className="text-body-sm text-neutral-100" variants={childVariants}>
-                    {project.description.summary}
+                    {project.description.tagline}
                 </motion.p>
             </motion.div>
 
