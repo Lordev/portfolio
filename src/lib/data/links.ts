@@ -24,7 +24,7 @@ export const socialLinks: SocialLinks = {
         href: 'https://www.linkedin.com/in/lorenzo-sallons-383945176',
     },
     email: {
-        label: 'info@lordev.me',
-        href: 'mailto:info@lordev.me',
+        label: 'info@lordev.net',
+        href: 'mailto:info@lordev.net',
     },
 };
